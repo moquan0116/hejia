@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>和家 | 管理后台</title>
+        <!-- 告诉浏览器响应屏幕宽度 -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.6 -->
+        <link rel="stylesheet" href="<?=base_url('result/admin/bootstrap/css/bootstrap.min.css')?>">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="<?=base_url('result/admin/plugins/font-awesome/css/font-awesome.min.css')?>">
+        <!-- 图标 -->
+        <link rel="stylesheet" href="<?=base_url('result/admin/plugins/ionicons/css/ionicons.min.css')?>">
+        <!-- AdminLTE的主样式-->
+        <link rel="stylesheet" href="<?=base_url('result/admin/dist/css/AdminLTE.min.css')?>">
+        <!-- AdminLTE的皮肤-->
+        <link rel="stylesheet" href="<?=base_url('result/admin/dist/css/skins/_all-skins.min.css')?>">
+        <!--网站CSS-->
+        <link rel="stylesheet" type="text/css" href="<?=base_url('result/admin/css/common.css')?>" />
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="<?=base_url('result/admin/plugins/html5shiv/html5shiv.min.js')?>"></script>
+        <script src="<?=base_url('result/admin/plugins/respond/respond.min.js')?>"></script>
+        <![endif]-->
+        <style>
+        </style>
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+
+            <?php $this->load->view("common/header.html")?>
+            <!-- Left side column. contains the logo and sidebar -->
+            <?php $this->load->view("common/aside.html")?>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+					 <h1>
+                        分类列表
+                    </h1>
+                   
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <!-- Small boxes (Stat box) -->
+                   <div class="box">
+                        <div class="box-header with-border">
+                            <div class="box-tools big">
+                                <form id="searchForm" class="form-horizontal" action="<?=creat_url('business/Member/index')?>" enctype="multipart/form-data" method="post">
+                                    <div class="col-xs-3  ">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">分类名称</span>
+                                            <input class="form-control"  placeholder="分类名称" name="brandName" type="text" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-0  ">
+                                        <button type="submit" class="btn btn-info" >
+                                            <i class="glyphicon glyphicon-search"></i>
+                                            查询
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-0 ">
+                                        <input type="hidden" name="reset" >
+                                        <a href="?"   class="btn btn-warning" >
+                                            <i class="glyphicon glyphicon-repeat"></i>
+                                            重置
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-0 add">
+                                        <a href="#"  class="btn btn-primary">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                            新增
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <!--todo 表格-商家信息查询列表-->
+                        <div class="box-body ">
+                            <table class="table table-bordered text-center">
+                                <tr>
+                                    <th>序号</th>
+                                    <th>分类编码</th>
+                                    <th>分类名称</th>
+
+                                </tr>
+                                <?php foreach($class as $key=> $data):?>
+                                <tr>
+                                    <td><?=($key+1)?></td>
+                                    <td><?=$data['classCode']?></td>
+                                    <td><?=$data['className']?></td>
+                              </tr>
+                                <?php endforeach; ?>
+                          </table>
+                        </div>
+                        <!-- /.box-body -->
+                        <?php $this->load->view('common/pager.html');?>
+                   </div>
+                </section>
+                     
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <?php $this->load->view("common/footer.html")?>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src='<?=base_url("result/admin/plugins/jQuery/jquery-2.2.3.min.js")?>'></script>
+        <!-- Bootstrap 3.3.6 -->
+        <script src="<?=base_url('/result/admin/bootstrap/js/bootstrap.min.js')?>" ></script>
+        <!--Layer-->
+        <script type="text/javascript" src="<?=base_url('/result/admin/plugins/layer/2.1/layer.js')?>"></script>
+        <!--控制左侧菜单-->
+        <script src="<?=base_url('/result/admin/dist/js/app.min.js')?>" ></script>
+        <!--网站系统JS-->
+        <script src="<?=base_url('/result/admin/js/common.js')?>" ></script>
+        <script>
+            $(".add").click(function () {
+                add();
+            });
+            function add() {
+                layer.open({
+                    type: 2,
+                    title: '分类添加',
+                    shadeClose: false,
+                    shade: 0.8,
+                    area: ['40%', '40%'],
+                    content: '<?=creat_url("class/classManagement/add")?>',
+                    btn: ["确定", "关闭"],
+                    yes:function (index, layero) {
+                        var data = $(layero).find("iframe")[0].contentWindow.getData();
+                        if( !data.length){
+                            layer.msg("不能为空");
+                            return false;
+                        }
+
+                        $.post("<?=creat_url('class/classManagement/doAdd')?>", { "className": data },
+                            function(data){
+                                layer.msg( data.msg);
+                                if(data.code == 200){
+                                    layer.close(index);
+                                    parent.location.reload();
+                                }
+                            }, "json");
+
+
+                    },
+                    cancel: function(index, layero){
+                        layer.close(index);
+                        return false;
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

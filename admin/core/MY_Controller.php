@@ -103,4 +103,15 @@ class MY_Controller extends CI_Controller
     {
         return preg_replace('# #','',$str);
     }
+
+    public function makeCode( $pix, $table ){
+        $field = $table.'Code';
+        $code = $pix.date('Ymdhis',time());
+        $table = $this->db->select('id')->from( $table )->where($field,$code)->get()->row();
+        if( !empty($table) ){
+            $this->makeCode( $pix, $table );
+        }else{
+            return $code;
+        }
+    }
 }

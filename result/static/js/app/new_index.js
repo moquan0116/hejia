@@ -12,10 +12,12 @@
             App.ajax('index', 'refer', $data, 'POST', function(r){
                 var user_token = $('#token').val();
                 var ANTUAN_URL = $('#antuanurl').val();
-                //App.system(r.reason,0);
+                App.system(r.reason,0);
                 //统计代码
                 _paq.push(['trackEvent', 'Btn', 'wSubmit','WebIndexSubmit']);
                 location.href = ANTUAN_URL + 'bm_pay?act_id=' + r.data.activity + '&bm_id=' + r.data.id + '&user_token=' + user_token + '&phone=' + phone;
+                console.log(ANTUAN_URL + 'bm_pay?act_id=' + r.data.activity + '&bm_id=' + r.data.id + '&user_token=' + user_token + '&phone=' + phone);
+
             },function(r){
                 App.system(r.reason,1);
                 $("[action='submit']").html('立即免费领票');
@@ -122,7 +124,7 @@
             View.bindEvent();
             this.renderCountDown();
             this.loadMap();
-            this.codeinputShow();
+            //this.codeinputShow();
             this.upSrcoll();
         },
         bindEvent: function() {
@@ -586,7 +588,7 @@
             });
 
             //首页表单提交验证
-            $(document).on("click","[action='submitindex']",function(){
+            /*$(document).on("click","[action='submitindex']",function(){
                 var form = $(this).parents('.form');
                 var name = $(form).find(":input[name='name']").val();
                 var telphone= $(form).find(":input[name='phone']").val().replace("-","").replace(" ","");
@@ -658,7 +660,7 @@
                     "radio_type": radio_type,
                     "remark": remark
                 };
-
+                console.log(cdata);
                 App.ajax('p', 'check_user_token', cdata, 'GET', function(r){
                     Model.submitAjaxForm(data);
                 },function(r){
@@ -666,10 +668,63 @@
                     $("[action='submitindex']").html('立即免费领票');
                     $("[action='submitindex']").removeAttr('disabled');
                 });
+            });*/
+            $(document).on("click","[action='submitindex']",function(){
+                var form = $(this).parents('.form');
+                var name = $(form).find(":input[name='name']").val();
+                var telphone= $(form).find(":input[name='phone']").val().replace("-","").replace(" ","");
+                //var xqname=$(form).find(":input[name='xqmc']").val();
+                //var piaonumt=$(form).find(":input[name='piaonumt']").val();
+                //var radio_type_hi=$(form).find(":input[name='radio_type']").val();
+                //var captcha = $(form).find('input[name="code"]').val();
+                var patrn = /^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                var regName = /^[_\-\~\!\@\#\$\%\^\&\*\(\)\|\,\，\?\？\>\<\.\/\}\{\;\；\'\》\《\。]+$/;//过滤英文字母
+
+                if(!patrn.test(telphone)){
+                    App.system('请输入正确的手机号！',1);
+                    $(form).find(":input[name='phone']").select();
+                    return false;
+                }
+                if(name.length < 2){
+                    App.system('您输入的联系人姓名无效！',1);
+                    $(form).find(":input[name='name']").select();
+                    return false;
+                }else{
+                    if(true==regName.test(name)){
+                        App.system('您输入的联系人姓名无效！',1);
+                        $(form).find(":input[name='username']").select();
+                        return false;
+                    }
+                }
+
+                var data = {
+                    'name':name,
+                    'telphone':telphone
+                };
+                //Model.submitAjaxForm(data, telphone);
+                $.post("http://localhost/My_host/hejia/index.php/main/test", {"func": "getNameAndTime"},
+                    function (data) {
+                        App.system('预约成功',2);
+                    }, "json");
+               /* $.ajax({
+                    cache: true,
+                    type: "POST",
+                    url: "http://localhost/My_host/hejia/index.php/main/test",
+                    data: {'a':'b'},
+                    processData: false,
+                    async: true,
+                    contentType: false,
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    },
+                    success: function (data) {
+                       console.log(data);
+                    }
+                });*/
             });
 
-            //提交验证
-            $(document).on("click","[action='submit']",function(){
+             //提交验证
+           /* $(document).on("click","[action='submit']",function(){
                 var form = $(this).parents('.form');
                 var name = $(form).find(":input[name='name']").val();
                 var telphone= $(form).find(":input[name='phone']").val().replace("-","").replace(" ","");
@@ -727,7 +782,7 @@
                 };
 
                 Model.submitAjaxForm(data, telphone);
-            });
+            });*/
 
             //底部悬浮动画
             $(document).on("click",".fix-wrap .close",function(){
@@ -975,12 +1030,12 @@
             var $focus = $('.form input[name="phone"]');
             var patrn = /^1[3|4|5|7|8]{1}[0-9]{9}$|^18\d{9}$/;
 
-            $focus.bind('input propertychange', function() {
+           /* $focus.bind('input propertychange', function() {
                 if(patrn.test($focus.val())){
                     $('.form').find('.yzm-input').removeClass('hidden');
                     $('.scrollup .scroll_main').css('height', '32px');
                 }
-            });
+            });*/
         },
         addbmMemberTotal: function() {//计数入库
             var data = {

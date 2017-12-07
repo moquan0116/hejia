@@ -1,0 +1,21 @@
+
+<?php if(empty($pager)){return false;}?>
+<?php
+$pager['total_pages']=ceil($pager['total_rows']/$pager['page_rows']);    //总页数
+$get=$pager['get_parameter']+[];
+?>
+<div class="box-footer clearfix" style="text-align: center;">
+    <ul class="pagination pagination-sm no-margin">
+        <li class="<?=$pager['current']==1?'active':''?>">
+            <a href="<?=creat_url($pager['uri'],$pager['get_parameter']+['page'=>1])?>#">首页</a>
+        </li>
+        <li class="<?=$pager['current']-1<1?'disabled':''?>">
+            <a <?=$pager['current']-1<1?'':'href="'.creat_url($pager['uri'],$pager['get_parameter']+['page'=>$pager['current']-1]).'"'?> >上一页</a>
+        </li>
+        <li><span><?=$pager['current']?>/<?=$pager['total_pages']?></span></li>
+        <li class="<?=$pager['current']+1>$pager['total_pages']?'disabled':''?>">
+            <a <?=$pager['current']+1>$pager['total_pages']?'':'href="'.creat_url($pager['uri'],$pager['get_parameter']+['page'=>$pager['current']+1]).'"'?> >下一页</a>
+        </li>
+        <li class="<?=$pager['current']==$pager['total_pages']?'active':''?>"><a href="<?=creat_url($pager['uri'],$pager['get_parameter']+['page'=>$pager['total_pages']])?>#">尾页</a></li>
+    </ul>
+</div>

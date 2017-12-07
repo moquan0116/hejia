@@ -1,0 +1,69 @@
+<aside class="main-sidebar">
+
+    <section class="sidebar">
+
+        <div class="user-panel">
+            <div class="pull-left image">
+
+            </div>
+            <div class="pull-left info">
+            </div>
+        </div>
+
+        <?= $menus_list ?>
+    </section>
+
+</aside>
+<!-- jQuery 2.2.3 -->
+<script src='<?=base_url("result/admin/plugins/jQuery/jquery-2.2.3.min.js")?>'></script>
+<script>
+    //设置cookie
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires+ "; path=/";
+    }
+    //获取cookie
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ')
+                c = c.substring(1);
+            if (c.indexOf(name) != -1)
+                return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+    //清除cookie
+    function clearCookie(name) {
+        setCookie(name, "", -1);
+    }
+    /**
+     * 根据菜单id打开菜单
+     * @param {type} id
+     * @returns {undefined}
+     */
+    function openLeftMenu(id) {
+        $("#menu_id_"+id).parents().children("a").click();
+        setTimeout(function(){
+            $(".sidebar-menu #menu_id_" + id).addClass("active");
+        },1000);
+
+    }
+    var current_menu_id = '<?= $current_menu_id ?>';
+    window.onload = function () {
+        if (current_menu_id) {
+            openLeftMenu(current_menu_id);
+            setCookie('admin_last_menu_id', current_menu_id);
+            //setCookie('last_url',window.location.href);
+        } else {
+            //if(getCookie('last_url') == document.referrer){
+            openLeftMenu(getCookie('admin_last_menu_id'));
+            //}
+        }
+    };
+
+</script>

@@ -1,0 +1,29 @@
+/*
+产品添加修改样式
+*/
+#add-goods-pic{
+    float: left;
+    height:50px;
+    width: 200px;
+    padding: 75px 50px;
+}
+#add-goods-pic i{    
+    cursor: pointer;
+    font-size: 50px;
+    color: #e7e7e7;
+}
+#add-goods-pic i:hover,#subtract-goods-pic i:hover
+{
+    color:#ccc;
+}
+
+#subtract-goods-pic i{
+    cursor: pointer;
+    font-size: 20px;
+    color: #e7e7e7;
+}
+#subtract-goods-pic{
+    position: absolute;
+    top:5px;
+    right: 5px;
+}

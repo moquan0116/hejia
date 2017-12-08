@@ -9,10 +9,16 @@
         // 报名表单提交
         submitAjaxForm: function($data, phone) {
             var _this = this;
-            App.ajax('My_host/hejia', 'index.php/main/addPhone', $data, 'POST', function(r){
+            App.ajax('hejia', 'index.php/main/addPhone', $data, 'POST', function(r){
                 /*var user_token = $('#token').val();
-                var ANTUAN_URL = $('#antuanurl').val();
-                App.system(r.reason,0);*/
+                var ANTUAN_URL = $('#antuanurl').val();*/
+                App.system(r.reason,1);
+                if(r.code == 10){
+                    setTimeout(function () {
+                        location.reload();
+                    },800);
+                }
+
                 //统计代码
                 /*_paq.push(['trackEvent', 'Btn', 'wSubmit','WebIndexSubmit']);
                 location.href = ANTUAN_URL + 'bm_pay?act_id=' + r.data.activity + '&bm_id=' + r.data.id + '&user_token=' + user_token + '&phone=' + phone;*/

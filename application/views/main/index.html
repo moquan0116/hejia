@@ -1804,90 +1804,95 @@
             <!-- 品牌分类 -->
             <div class="classify-list-scroll">
                 <ul class="classify-list brand-classify">
+                    <?php foreach( $class as $key => $data):?>
+                    <li  data-name="<?=$data->className?>" data-code="<?=$data->classCode?>">
+                        <i class="classify-1"></i><span><?=$data->className?> </span>
+                    </li>
+                    <?php endforeach;?>
                     <!--  <li  class="active"  data-name="地板" data-id="1" data-actid ="65"> -->
-                    <li  class="active"  data-name="地板" data-id="1" data-actid ="65">
+                   <!-- <li  class="active"  data-name="地板" data-id="1" data-actid ="65">
                         <i class="classify-1"></i><span>地板 </span>
                     </li>
-                    <!--  <li  data-name="瓷砖" data-id="2" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="瓷砖" data-id="2" data-actid ="65"> &ndash;&gt;
                     <li  data-name="瓷砖" data-id="2" data-actid ="65">
                         <i class="classify-2"></i><span>瓷砖 </span>
                     </li>
-                    <!--  <li  data-name="卫浴" data-id="4" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="卫浴" data-id="4" data-actid ="65"> &ndash;&gt;
                     <li  data-name="卫浴" data-id="4" data-actid ="65">
                         <i class="classify-4"></i><span>卫浴 </span>
                     </li>
-                    <!--  <li  data-name="木门" data-id="7" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="木门" data-id="7" data-actid ="65"> &ndash;&gt;
                     <li  data-name="木门" data-id="7" data-actid ="65">
                         <i class="classify-7"></i><span>木门 </span>
                     </li>
-                    <!--  <li  data-name="橱柜" data-id="5" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="橱柜" data-id="5" data-actid ="65"> &ndash;&gt;
                     <li  data-name="橱柜" data-id="5" data-actid ="65">
                         <i class="classify-5"></i><span>橱柜 </span>
                     </li>
-                    <!--  <li  data-name="移门/衣帽间" data-id="8" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="移门/衣帽间" data-id="8" data-actid ="65"> &ndash;&gt;
                     <li  data-name="移门/衣帽间" data-id="8" data-actid ="65">
                         <i class="classify-8"></i><span>移门/衣帽间 </span>
                     </li>
-                    <!--  <li  data-name="吊顶" data-id="6" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="吊顶" data-id="6" data-actid ="65"> &ndash;&gt;
                     <li  data-name="吊顶" data-id="6" data-actid ="65">
                         <i class="classify-6"></i><span>吊顶 </span>
                     </li>
-                    <!--  <li  data-name="厨卫电器" data-id="9" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="厨卫电器" data-id="9" data-actid ="65"> &ndash;&gt;
                     <li  data-name="厨卫电器" data-id="9" data-actid ="65">
                         <i class="classify-9"></i><span>厨卫电器 </span>
                     </li>
-                    <!--  <li  data-name="硅藻泥/油漆" data-id="3" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="硅藻泥/油漆" data-id="3" data-actid ="65"> &ndash;&gt;
                     <li  data-name="硅藻泥/油漆" data-id="3" data-actid ="65">
                         <i class="classify-3"></i><span>硅藻泥/油漆 </span>
                     </li>
-                    <!--  <li  data-name="墙纸布艺" data-id="11" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="墙纸布艺" data-id="11" data-actid ="65"> &ndash;&gt;
                     <li  data-name="墙纸布艺" data-id="11" data-actid ="65">
                         <i class="classify-11"></i><span>墙纸布艺 </span>
                     </li>
-                    <!--  <li  data-name="开关灯具" data-id="10" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="开关灯具" data-id="10" data-actid ="65"> &ndash;&gt;
                     <li  data-name="开关灯具" data-id="10" data-actid ="65">
                         <i class="classify-10"></i><span>开关灯具 </span>
                     </li>
-                    <!--  <li  data-name="家具" data-id="15" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="家具" data-id="15" data-actid ="65"> &ndash;&gt;
                     <li  data-name="家具" data-id="15" data-actid ="65">
                         <i class="classify-15"></i><span>家具 </span>
                     </li>
-                    <!--  <li  data-name="综合小件" data-id="13" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="综合小件" data-id="13" data-actid ="65"> &ndash;&gt;
                     <li  data-name="综合小件" data-id="13" data-actid ="65">
                         <i class="classify-13"></i><span>综合小件 </span>
                     </li>
-                    <!--  <li  data-name="装饰公司" data-id="14" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="装饰公司" data-id="14" data-actid ="65"> &ndash;&gt;
                     <li  data-name="装饰公司" data-id="14" data-actid ="65">
                         <i class="classify-14"></i><span>装饰公司 </span>
                     </li>
-                    <!--  <li  data-name="锅炉暖通" data-id="12" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="锅炉暖通" data-id="12" data-actid ="65"> &ndash;&gt;
                     <li  data-name="锅炉暖通" data-id="12" data-actid ="65">
                         <i class="classify-12"></i><span>锅炉暖通 </span>
                     </li>
-                    <!--  <li  data-name="房产" data-id="1000" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="房产" data-id="1000" data-actid ="65"> &ndash;&gt;
                     <li  data-name="房产" data-id="1000" data-actid ="65">
                         <i class="classify-1000"></i><span>房产 </span>
                     </li>
-                    <!--  <li  data-name="汽车" data-id="2000" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="汽车" data-id="2000" data-actid ="65"> &ndash;&gt;
                     <li  data-name="汽车" data-id="2000" data-actid ="65">
                         <i class="classify-2000"></i><span>汽车 </span>
                     </li>
-                    <!--  <li  data-name="婴幼" data-id="3000" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="婴幼" data-id="3000" data-actid ="65"> &ndash;&gt;
                     <li  data-name="婴幼" data-id="3000" data-actid ="65">
                         <i class="classify-3000"></i><span>婴幼 </span>
                     </li>
-                    <!--  <li  data-name="早教区" data-id="4000" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="早教区" data-id="4000" data-actid ="65"> &ndash;&gt;
                     <li  data-name="早教区" data-id="4000" data-actid ="65">
                         <i class="classify-4000"></i><span>早教区 </span>
                     </li>
-                    <!--  <li  data-name="教育区" data-id="5000" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="教育区" data-id="5000" data-actid ="65"> &ndash;&gt;
                     <li  data-name="教育区" data-id="5000" data-actid ="65">
                         <i class="classify-5000"></i><span>教育区 </span>
                     </li>
-                    <!--  <li  data-name="旅游区" data-id="6000" data-actid ="65"> -->
+                    &lt;!&ndash;  <li  data-name="旅游区" data-id="6000" data-actid ="65"> &ndash;&gt;
                     <li  data-name="旅游区" data-id="6000" data-actid ="65">
                         <i class="classify-6000"></i><span>旅游区 </span>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <a class="right-btn"></a>

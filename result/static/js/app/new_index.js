@@ -9,14 +9,13 @@
         // 报名表单提交
         submitAjaxForm: function($data, phone) {
             var _this = this;
-            App.ajax('index', 'refer', $data, 'POST', function(r){
-                var user_token = $('#token').val();
+            App.ajax('My_host/hejia', 'index.php/main/addPhone', $data, 'POST', function(r){
+                /*var user_token = $('#token').val();
                 var ANTUAN_URL = $('#antuanurl').val();
-                App.system(r.reason,0);
+                App.system(r.reason,0);*/
                 //统计代码
-                _paq.push(['trackEvent', 'Btn', 'wSubmit','WebIndexSubmit']);
-                location.href = ANTUAN_URL + 'bm_pay?act_id=' + r.data.activity + '&bm_id=' + r.data.id + '&user_token=' + user_token + '&phone=' + phone;
-                console.log(ANTUAN_URL + 'bm_pay?act_id=' + r.data.activity + '&bm_id=' + r.data.id + '&user_token=' + user_token + '&phone=' + phone);
+                /*_paq.push(['trackEvent', 'Btn', 'wSubmit','WebIndexSubmit']);
+                location.href = ANTUAN_URL + 'bm_pay?act_id=' + r.data.activity + '&bm_id=' + r.data.id + '&user_token=' + user_token + '&phone=' + phone;*/
 
             },function(r){
                 App.system(r.reason,1);
@@ -69,13 +68,21 @@
             })
         },
         getBrandByClassify:function($data){
-            App.ajax('act_info_ajax', 'brand_ajax', $data, 'GET', function(r){
-                if (r.data.brand_data.length == 0) {
+            App.ajax('My_host/hejia', 'index.php/main/getBrand', $data, 'GET', function(r){
+                console.log(r);
+                /*if (r.data.brand_data.length == 0) {
+                    $(".at-brandlist ul").html('<li class="brand_empty"></li>');
+                    return false;
+                 <li data-name="富林地板" data-desc="时尚美学地板">
+                 <a class="order_btn"><img src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/19/864807e8bb6b.jpg"/></a>
+                 </li>
+                }*/
+                if (r.length == 0) {
                     $(".at-brandlist ul").html('<li class="brand_empty"></li>');
                     return false;
                 }
-                var brand_data = r.data.brand_data;
-                var htmlStr = $("#brandlist_tmpl").tmpl({list : brand_data}).outerHTML();
+                //var brand_data = r.data.brand_data;
+                var htmlStr = $("#brandlist_tmpl").tmpl({list : r}).outerHTML();
                 $(".at-brandlist").html(htmlStr);
             },function(r){
                 App.system(r.msg, 2);
@@ -199,10 +206,13 @@
             $(document).on("click",".brand-classify li",function(){
                 var $this = $(this);
                 var obj = _this.switchClassify($this);
-                var name = obj.name ;
+                /*var name = obj.name ;
                 var id = obj.id ;
-                var actid = obj.actid ;
-                $data = {"act_id":actid,"cat_id":id,"current":0,"rowCount":40};
+                var actid = obj.actid ;*/
+                var code = obj.code
+                //$data = {"act_id":actid,"cat_id":id,"current":0,"rowCount":40};
+                $data = {"code":code};
+                console.log(obj);
                 Model.getBrandByClassify($data);
             });
 
@@ -699,28 +709,9 @@
 
                 var data = {
                     'name':name,
-                    'telphone':telphone
+                    'phone':telphone
                 };
-                //Model.submitAjaxForm(data, telphone);
-                $.post("http://localhost/My_host/hejia/index.php/main/test", {"func": "getNameAndTime"},
-                    function (data) {
-                        App.system('预约成功',2);
-                    }, "json");
-               /* $.ajax({
-                    cache: true,
-                    type: "POST",
-                    url: "http://localhost/My_host/hejia/index.php/main/test",
-                    data: {'a':'b'},
-                    processData: false,
-                    async: true,
-                    contentType: false,
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert(textStatus);
-                    },
-                    success: function (data) {
-                       console.log(data);
-                    }
-                });*/
+                Model.submitAjaxForm(data, telphone);
             });
 
              //提交验证
@@ -998,10 +989,12 @@
         },
         switchClassify:function($target){
             $target.addClass('active').siblings().removeClass('active');
-            var name = $target.data('name');
+            var code = $target.data('code');
+            /*var name = $target.data('name');
             var id =  $target.data('id');
-            var actid = $target.data('actid');
-            var data = {"name":name,"id":id,"actid":actid};
+            var actid = $target.data('actid');*/
+            //var data = {"name":name,"id":id,"actid":actid};
+            var data = {"code":code};
             return data ;
         },
         loadMap: function() {

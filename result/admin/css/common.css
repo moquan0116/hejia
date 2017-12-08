@@ -51,7 +51,11 @@ input.form-control[disabled],input.form-control[readonly]/*,textarea.form-contro
 }
 /*表格中查询下拉框*/
 .table>thead>tr  select{
+<<<<<<< HEAD
     border: none !important;
+=======
+    border: none;
+>>>>>>> origin/master
     text-align: center;
     padding: 0;
 }
@@ -61,6 +65,7 @@ input.form-control[disabled],input.form-control[readonly]/*,textarea.form-contro
     padding-left:0 !important;
     padding-right:8px !important;
 }
+<<<<<<< HEAD
 .box-tools>div{
     padding-left:0 !important;
     padding-right:8px !important;
@@ -71,12 +76,19 @@ input.form-control[disabled],input.form-control[readonly]/*,textarea.form-contro
     display: inline-block !important;
     padding-right: 8px !important;
     float: left !important;
+=======
+/*头部搜索框的按扭*/
+.box-tools>form>.col-xs-0{
+    display: inline-block !important;
+    padding-right: 5px !important;
+>>>>>>> origin/master
 }
 
 /**/
 table tbody tr:hover {
     background: #d2d6de !important;
 }
+<<<<<<< HEAD
 .edit{
     background:#f39c12;
     border:1px solid #ccc;
@@ -127,6 +139,32 @@ tr td{
 .form-error {
     color: red !important;
 }
+=======
+
+/*打印css*/
+@media print {
+    .row>div small {
+        font-size: 1.2rem;
+        color:#777;
+    }
+    table tr th {
+        font-weight: 500;
+        /*page-break-before:always;*/
+    }
+    .table  th,.table  td {
+        border: 1px solid #3b4249 !important;
+    }
+    .goods_unit,.total{
+        white-space:nowrap !important;
+    }
+}
+
+@page {
+    size:  auto;
+    margin: 5mm 8mm 5mm 8mm;
+}
+
+>>>>>>> origin/master
 /* 按扭组间隔*/
 .cursor>.btn:first-child {
     margin-left: 0 !important;
@@ -135,3 +173,7 @@ tr td{
     border-radius:2px !important ;
     margin-left: 0.75rem !important;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master

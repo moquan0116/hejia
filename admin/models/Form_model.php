@@ -48,7 +48,7 @@ class Form_model extends MY_Model
      * @param type $message 提示内容
      */
     public function json_error($message = "操作失败"){
-        $tmp['error'] = $message;
+        $tmp['msg'] = $message;
         echo json_encode($tmp);
         exit();
     }
@@ -58,7 +58,7 @@ class Form_model extends MY_Model
      * @param type $message 提示内容
      */
     public function json_success($message = "操作成功"){
-        $tmp['success'] = $message;
+        $tmp['msg'] = $message;
         echo json_encode($tmp);
         exit();
     }

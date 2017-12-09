@@ -19,7 +19,7 @@ class ClassManagement extends MY_Controller {
     public function index(){
 
         //是否搜索
-        $brandName = $this->input->get_post('brandName');
+        $className = $this->input->get_post('className');
 
         //当前页数
         $curPage = $this->input->get_post("page");
@@ -81,6 +81,36 @@ class ClassManagement extends MY_Controller {
 
                 }
             }
+    }
+
+    public function edit() {
+        $id = $this->input->get('id');
+        $class = $this->db->get_where( "class",array("id" => $id) )->row_array();
+        $this->load->view('class/classEdit.html',array( 'class'=>$class ,'id'=>$id));
+    }
+
+    public function doEdit() {
+        $id = $this->input->post('id');
+        $data = array(
+            "className" => trim( $this->input->post("className") ),
+        );
+
+        $this->db->update( 'class', $data, array('id'=>$id) );
+        if( $this->db->affected_rows() <= -1){
+            echo json_encode( array('code'=>500,'msg'=>'操作失败') );
+        }else{
+            echo json_encode( array('code'=>200,'msg'=>'操作成功') );
+        }
+    }
+
+    public function del() {
+        $id = $this->input->get('id');
+        $this->db->delete("class",array('id'=>$id));
+        if($this->db->affected_rows()<=-1){
+            echo json_encode( array('code'=>500,'msg'=>'操作失败') );
+        }else{
+            echo json_encode( array('code'=>200,'msg'=>'操作成功') );
+        }
     }
 
 

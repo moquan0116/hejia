@@ -10,7 +10,7 @@ class Image_model extends MY_Model {
     public function __construct() {
         parent::__construct();
         //$this->base_url = $this->config->item('static_base_url');
-        $this->base_url = "http://".$_SERVER['HTTP_HOST'].'/hejia/';
+        $this->base_url = "http://".$_SERVER['HTTP_HOST'].'/my_host/hejia/';
     }
 
     /**

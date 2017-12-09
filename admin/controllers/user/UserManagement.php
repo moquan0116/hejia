@@ -70,13 +70,16 @@ class UserManagement extends MY_Controller {
         );
         $user = $this->db->get_where('subscribe_user',array('phone'=>$data['phone']))->row();
         if($user){
-            $this->error( "手机号已存在");
+            echo json_encode( array('code'=>500,'msg'=>'手机号已存在') );
+            return false;
         }else{
             $this->db->insert( 'subscribe_user', $data );
             if( $this->db->affected_rows() <= -1){
-                $this->error( "操作失败" );
+                echo json_encode( array('code'=>500,'msg'=>'操作失败') );
+                return false;
             }else{
-                $this->success( "操作成功" ,creat_url('user/UserManagement/index'));
+                echo json_encode( array('code'=>200,'msg'=>'操作成功') );
+                return false;
             }
         }
 

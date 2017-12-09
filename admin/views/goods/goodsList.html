@@ -52,7 +52,7 @@
                         <div class="box-header with-border">
                             <div class="box-tools big">
                                 <form id="searchForm" class="form-horizontal" action="<?=creat_url('business/Member/index')?>" enctype="multipart/form-data" method="post">
-                                    <div class="col-xs-3  ">
+                                   <!-- <div class="col-xs-3  ">
                                         <div class="input-group">
                                             <span class="input-group-addon">商品名称</span>
                                             <input class="form-control"  placeholder="商品名称" name="goodsName" type="text" value="">
@@ -71,12 +71,12 @@
                                             <i class="glyphicon glyphicon-repeat"></i>
                                             重置
                                         </a>
-                                    </div>
+                                    </div>-->
                                     <div class="col-xs-0 add">
-                                        <a href="<?=creat_url('goods/GoodsManagement/add')?>"  class="btn btn-primary">
+                                        <button type="button" class="btn btn-primary addJ">
                                             <i class="glyphicon glyphicon-plus"></i>
                                             新增
-                                        </a>
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -88,10 +88,9 @@
                                 <tr>
                                     <th>序号</th>
                                     <th>缩略图</th>
-                                    <th>商品编码</th>
                                     <th>商品名称</th>
                                     <th>标题</th>
-                                    <th>预约数</th>
+                                    <!--<th>预约数</th>-->
                                     <th>市场价</th>
                                     <th>和家价</th>
                                     <th>状态</th>
@@ -100,11 +99,9 @@
                                 <?php foreach($goods as $key=> $data):?>
                                 <tr>
                                     <td><?=($key+1)?></td>
-                                    <td><img style="width: 30%;" src="<?=$data['image']?>"></td>
-                                    <td><a href="javascript:info('<?=$data['id']?>')"><?=$data["goodsCode"]?></a></td>
+                                    <td style="width: 10%"><img  style="width: 100%;" src="<?=$data['image']?>"></td>
                                     <td><?=$data['goodsName']?></td>
                                     <td><?=$data['caption']?></td>
-                                    <td><?=$data['subscribeNum']?></td>
                                     <td><?=$data['marketPrice']?></td>
                                     <td><?=$data['hePrice']?></td>
                                     <td>
@@ -116,12 +113,12 @@
                                     </td>
                                     <td>
                                         <div class="btn-group cursor">
-                                            <a class="btn btn-primary btn-sm" href="javascript:relieve(<?=$data['id']?>)" title="编辑商品信息">
+                                            <button class="btn btn-primary btn-sm editJ" data-id="<?=$data['id']?>">
                                                 编辑
-                                            </a>
-                                            <a class="btn btn-warning btn-sm" href="javascript:change_status(<?=$data['id']?>)" title="商家状态修改">
+                                            </button>
+                                            <button class="btn btn-warning btn-sm delJ" data-id="<?=$data['id']?>">
                                                 删除
-                                            </a>
+                                            </button>
                                         </div>
                                     </td>
                               </tr>
@@ -151,54 +148,60 @@
         <!--网站系统JS-->
         <script src="<?=base_url('/result/admin/js/common.js')?>" ></script>
         <!--表单验证-->
-        <script type="text/javascript" src="<?=base_url('/result/js/jquery.validate.js')?>"></script>
-        <!-- 时间日期处理 -->
-        <script src="<?=base_url('/result/js/moment.min.js')?>"></script>
-        <!--时间日期选择-->
-        <script src="<?=base_url('/result/admin/plugins/daterangepicker/daterangepicker.js')?>" ></script>
 		<script>
+            $(".editJ").click(function () {
+                var id = $(this).data('id');
+                edit(id);
+            });
+            $(".delJ").click(function () {
+                var id = $(this).data('id');
+                del(id);
+            });
+            $(".addJ").click(function () {
+                var id = $(this).data('id');
+                add(id);
+            });
 
-            function relieve(id,merc_code){
-                if(!merc_code) {
-                    layer.open({
-                        title: "信息",
-                        content: "没有绑定商家"
-                    });
-                    return;
-                }
-                layer.confirm('确认要解除绑定吗？', function(){
-                    $.getJSON("<?=creat_url('business/member/relieve')?>", {id:id}, function(data){
-                        layer.msg(data);
-                        location.reload();
-                    });
-                });
-            }
-
-            function info(id){
+            function edit(id) {
                 layer.open({
                     type: 2,
-                    title: '采购员微信账号详情',
+                    title: '商品修改',
                     shadeClose: false,
                     shade: 0.8,
-                    area: ['60%', '80%'],
-                    content: "<?=creat_url('business/member/member_info')?>?layer=1&id="+id
+                    area: ['40%', '60%'],
+                    content: '<?=creat_url("goods/goodsManagement/edit")?>?id=' +id
                 });
             }
+            function info(id) {
+                layer.open({
+                    type: 2,
+                    title: '仓库详情',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['40%', '75%'],
+                    content:  '<?=base_url("goods/goodsManagement/info")?>?id' +id
+                });
+            }
+            function add(){
+                layer.open({
+                    type: 2,
+                    title: '新增商品',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['40%', '75%'],
+                    content:  '<?=creat_url("goods/goodsManagement/add")?>'
+                });
+            }
+
             function del(id){
                 layer.confirm('确认要删除吗？',function(){
-                   $.getJSON("<?=creat_url('business/member/dodel')?>",{id:id},function(data){
-                           layer.msg(data);
-                           location.reload();
-                    });
-                });
-            }
-            function change_status(obj, id){
-                layer.confirm('确认要改变状态吗？', function(){
-                    obj = obj > 0?0:1;
-                    $.getJSON("<?=creat_url('business/member/change_status')?>", {id:id, status:obj}, function(data){
-                        //alert(data);
-                        layer.msg(data);
-                        location.reload();
+                    $.getJSON("<?=creat_url('goods/goodsManagement/del')?>",{id:id},function(data){
+                        layer.msg(data.msg);
+                        if(data.code == 200){
+                            setTimeout(function () {
+                                location.reload();
+                            },800);
+                        }
                     });
                 });
             }

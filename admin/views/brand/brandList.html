@@ -50,8 +50,8 @@
                    <div class="box">
                         <div class="box-header with-border">
                             <div class="box-tools big">
-                                <form id="searchForm" class="form-horizontal" action="<?=creat_url('business/Member/index')?>" enctype="multipart/form-data" method="post">
-                                    <div class="col-xs-3  ">
+                                <form id="searchForm" class="form-horizontal" action="<?=creat_url('brand/brandManagement/index')?>" enctype="multipart/form-data" method="post">
+                                    <!--<div class="col-xs-3  ">
                                         <div class="input-group">
                                             <span class="input-group-addon">品牌名称</span>
                                             <input class="form-control"  placeholder="品牌名称" name="brandName" type="text" value="">
@@ -70,12 +70,12 @@
                                             <i class="glyphicon glyphicon-repeat"></i>
                                             重置
                                         </a>
-                                    </div>
-                                    <div class="col-xs-0 add">
-                                        <a href="<?=creat_url('brand/BrandManagement/add')?>"  class="btn btn-primary">
+                                    </div>-->
+                                    <div class="col-xs-0 addJ">
+                                        <button  type="button" class="btn btn-primary">
                                             <i class="glyphicon glyphicon-plus"></i>
                                             新增
-                                        </a>
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -89,6 +89,7 @@
                                     <th>分类名称</th>
                                     <th>品牌编码</th>
                                     <th>品牌名称</th>
+                                    <th>操作</th>
                                 </tr>
                                 <?php foreach($brand as $key=> $data):?>
                                 <tr>
@@ -96,6 +97,16 @@
                                     <td><?=$data['className']?></td>
                                     <td><?=$data['brandCode']?></td>
                                     <td><?=$data['brandName']?></td>
+                                    <td>
+                                        <div class="btn-group cursor">
+                                            <button class="btn btn-primary btn-sm editJ"  data-id="<?=$data['id']?>">
+                                                编辑
+                                            </button>
+                                            <button class="btn btn-warning btn-sm delJ"  data-id="<?=$data['id']?>">
+                                                删除
+                                            </button>
+                                        </div>
+                                    </td>
                               </tr>
                                 <?php endforeach; ?>
                           </table>
@@ -128,6 +139,63 @@
         <script src="<?=base_url('/result/js/moment.min.js')?>"></script>
         <!--时间日期选择-->
         <script src="<?=base_url('/result/admin/plugins/daterangepicker/daterangepicker.js')?>" ></script>
+        <script>
+            $(".editJ").click(function () {
+                var id = $(this).data('id');
+                edit(id);
+            });
+            $(".delJ").click(function () {
+                var id = $(this).data('id');
+                del(id);
+            });
+            $(".addJ").click(function () {
+                var id = $(this).data('id');
+                add(id);
+            });
 
+            function edit(id) {
+                layer.open({
+                    type: 2,
+                    title: '品牌修改',
+                    shadeClose: false,
+                    shade: 0.8,
+                    area: ['40%', '60%'],
+                    content: '<?=creat_url("brand/brandManagement/edit")?>?id=' +id
+                });
+            }
+            function info(id) {
+                layer.open({
+                    type: 2,
+                    title: '仓库详情',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['40%', '75%'],
+                    content:  '<?=base_url("brand/brandManagement/info")?>?id' +id
+                });
+            }
+            function add(){
+                layer.open({
+                    type: 2,
+                    title: '新增品牌',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['40%', '75%'],
+                    content:  '<?=creat_url("brand/brandManagement/add")?>'
+                });
+            }
+
+            function del(id){
+                layer.confirm('确认要删除吗？',function(){
+                    $.getJSON("<?=creat_url('brand/BrandManagement/del')?>",{id:id},function(data){
+                        layer.msg(data.msg);
+                        if(data.code == 200){
+                            setTimeout(function () {
+                                location.reload();
+                            },800);
+                        }
+                    });
+                });
+            }
+        </script>
     </body>
 </html>

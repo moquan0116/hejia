@@ -9,7 +9,7 @@
         // 报名表单提交
         submitAjaxForm: function($data, phone) {
             var _this = this;
-            App.ajax('hejia', 'index.php/main/addPhone', $data, 'POST', function(r){
+            App.ajax('my_host/hejia', 'index.php/main/addPhone', $data, 'POST', function(r){
                 /*var user_token = $('#token').val();
                 var ANTUAN_URL = $('#antuanurl').val();*/
                 App.system(r.reason,1);
@@ -133,7 +133,7 @@
     var View = {
         init: function() {
             var _this = this;
-            this.addbmMemberTotal();//计数
+            //this.addbmMemberTotal();//计数
             View.bindEvent();
             this.renderCountDown();
             this.loadMap();
@@ -584,7 +584,7 @@
             });
 
             //自动获取手机入库
-            $('input[name="phone"]').keyup(function(){
+           /* $('input[name="phone"]').keyup(function(){
                 var p = $(this).val();
                 var patrn = new RegExp(/^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/);
                 var name = $('input[name="name"]').val();
@@ -604,7 +604,7 @@
                     App.ajax('index', 'refer', data, 'POST', function(r){
                     })
                 }
-            });
+            });*/
 
             //首页表单提交验证
             /*$(document).on("click","[action='submitindex']",function(){
@@ -785,7 +785,7 @@
             });*/
 
             //底部悬浮动画
-            $(document).on("click",".fix-wrap .close",function(){
+           /* $(document).on("click",".fix-wrap .close",function(){
                 $('.bottom-sign').animate({'left': '-150%'}, 800, function(){
                     var wW = ($(window).width() - Model.data.width)/2;
                     if(wW < 125) {
@@ -796,7 +796,7 @@
                     }
                     flag = true;
                 });
-            });
+            });*/
 
             // 输入框姓名提示语
             $('input[name="name"]').bind('input propertychange', function() {
@@ -1078,12 +1078,12 @@
             var floor1Top = $('#floor1').offset().top;
             var historyTop = $('#floor9').length ? $('#floor9').offset().top : 0;
             //底部报名及侧边导航
-            if(t > 0) {
+           /* if(t > 0) {
                 $(".bottom-sign").fadeIn(500);
             }else{
                 $(".bottom-show-left").css({'left': '-172px'});
                 $('.bottom-sign').css({'left': '0','display':'none'});
-            }
+            }*/
 
             // if(windowTop + windowHeight > floor1Top + 830){
             if(windowTop + windowHeight > floor1Top + 850){

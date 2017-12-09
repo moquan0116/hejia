@@ -20,23 +20,21 @@
         <script src="<?=base_url('result/admin/plugins/respond/respond.min.js')?>"></script>
         <![endif]-->
         <style>
-
+            /*layer弹框全屏*/
+            .content-wrapper,.main-footer{margin-left: 0 !important;}
         </style>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
 
-            <?php $this->load->view("common/header.html")?>
-            <!-- Left side column. contains the logo and sidebar -->
-            <?php $this->load->view("common/aside.html")?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
-                <section class="content-header">
+               <!-- <section class="content-header">
                     <h1>
                         预约用户添加
                     </h1>
-                </section>
+                </section>-->
                 <section class="content">
                     <!-- Your Page Content Here -->
                     <div class="box">
@@ -50,13 +48,13 @@
 
                                     <div class="form-group">
                                         <label for="class_name" class="col-xs-2 control-label">预约名称</label>
-                                        <div class="col-xs-4">
+                                        <div class="col-xs-6">
                                             <input type="text" class="form-control" id="name" name="name" placeholder="预约名称" value="" >
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="class_name" class="col-xs-2 control-label">手机号码</label>
-                                        <div class="col-xs-4">
+                                        <div class="col-xs-6">
                                             <input type="text" class="form-control" id="phone" name="phone" placeholder="手机号码" value="" >
                                         </div>
                                     </div>
@@ -64,7 +62,7 @@
                                 </div>
                                 <!-- /.box-body -->
                                 <div class="box-footer">
-                                    <button type="submit" class="btn btn-info pull-right" >提交</button>
+                                    <button type="button" id="saveBtn" class="btn btn-info pull-right" >提交</button>
                                 </div>
                                 <!-- /.box-footer -->
                             </form>
@@ -79,7 +77,42 @@
         <!-- ./wrapper -->
         <script src='<?=base_url("result/admin/plugins/jQuery/jquery-2.2.3.min.js")?>'></script>
         <script src="<?=base_url('/result/admin/bootstrap/js/bootstrap.min.js')?>" ></script>
-        <script src="<?=base_url('/result/admin/js/common.js')?>" ></script>
         <script src="<?=base_url('/result/admin/dist/js/app.min.js')?>" ></script>
+        <!--Layer-->
+        <script type="text/javascript" src="<?=base_url('/result/admin/plugins/layer/2.1/layer.js')?>"></script>
+        <script src="<?=base_url('/result/admin/js/common.js')?>" ></script>
+
+        <script>
+            $("#saveBtn").click(function () {
+                doSave();
+            });
+            function doSave() {
+                var formData = new FormData($('form')[0]);
+                $.ajax({
+                    cache: true,
+                    type: "POST",
+                    url: "<?=creat_url('user/userManagement/doAdd')?>",
+                    //data:$('#saveForm').serialize(),// 你的formid
+                    data: formData,
+                    processData: false,
+                    async: true,
+                    contentType: false,
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    },
+                    success: function (data) {
+                        var obj = $.parseJSON(data);
+
+                        layer.msg(obj.msg);
+                        if(obj.code == 200){
+                            setTimeout(function () {
+                                parent.location.reload();
+                            },800);
+                        }
+
+                    }
+                });
+            }
+        </script>
     </body>
 </html>

@@ -28,7 +28,7 @@
 
 
             //头部登录
-            App.ajax('service/login', 'check_login', null, 'GET', function(r) {
+            /*App.ajax('service/login', 'check_login', null, 'GET', function(r) {
                 if(r.data.l_state == 1) {
                     var nickname = r.data.nickname,
                         head_url = r.data.head_url;
@@ -50,7 +50,7 @@
                 }
             }, function(r) {
 
-            });
+            });*/
 
             //登录弹窗
             $(document).on('click', '.js_login', function() {

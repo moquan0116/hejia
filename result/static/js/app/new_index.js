@@ -9,7 +9,7 @@
         // 报名表单提交
         submitAjaxForm: function($data, phone) {
             var _this = this;
-            App.ajax('my_host/hejia', 'index.php/main/addPhone', $data, 'POST', function(r){
+            App.ajax(subscribe.project, subscribe.method, $data, 'POST', function(r){
                 /*var user_token = $('#token').val();
                 var ANTUAN_URL = $('#antuanurl').val();*/
                 App.system(r.reason,1);
@@ -75,7 +75,7 @@
         },
         moreAjaxSpecialMy:function( $data, $obj ){
             //$(".speciallist>ul").append(myTemplate);
-            App.ajax('my_host/hejia', 'index.php/main/getAddGoods', $data, 'GET', function(r){
+            App.ajax(goods.project, goods.method, $data, 'GET', function(r){
                 if(r.code == 200){
                     $(r.data).each(function (k,v) {
                         var tmpl = $(myTemplate).clone();
@@ -103,7 +103,7 @@
             })
         },
         getBrandByClassify:function($data){
-            App.ajax('My_host/hejia', 'index.php/main/getBrand', $data, 'GET', function(r){
+            App.ajax(brand.project, brand.method, $data, 'GET', function(r){
                 /*if (r.data.brand_data.length == 0) {
                     $(".at-brandlist ul").html('<li class="brand_empty"></li>');
                     return false;
@@ -165,7 +165,7 @@
             var _this = this;
             //this.addbmMemberTotal();//计数
             View.bindEvent();
-            this.renderCountDown();
+            //this.renderCountDown();
             this.loadMap();
             //this.codeinputShow();
             this.upSrcoll();
@@ -245,10 +245,9 @@
                 /*var name = obj.name ;
                 var id = obj.id ;
                 var actid = obj.actid ;*/
-                var code = obj.code
+                var code = obj.code;
                 //$data = {"act_id":actid,"cat_id":id,"current":0,"rowCount":40};
                 $data = {"code":code};
-                console.log(obj);
                 Model.getBrandByClassify($data);
             });
 
@@ -292,7 +291,7 @@
 
 
             // 表单验证码
-            $(document).on('click', '.form .js_get_code', function() {
+           /* $(document).on('click', '.form .js_get_code', function() {
                 var phone = $('.form input[name="phone"]').val(),
                     name = $('.form input[name="name"]').val();
 
@@ -346,17 +345,17 @@
                         return false;
                     });
                 });
-            });
+            });*/
 
             //更换验证码
-            $(document).on("click",".verify-wrap .verify-img",function(){
+           /* $(document).on("click",".verify-wrap .verify-img",function(){
                 $(this).attr('src', '/index/code?name=register&srand='+Math.random());
             });
 
             //看不清，换一张
             $(document).on("click",".js_rush",function(){
                 $('.verify-wrap .verify-img').trigger('click');
-            });
+            });*/
 
 
             //品牌立即预约
@@ -899,7 +898,7 @@
 
 
             //点击即播放一分钟了解安团视频
-            $(document).on('click','.about-at a',function(){
+            /*$(document).on('click','.about-at a',function(){
                 // $(document).on('click','.info-wrap .know-more',function(){
                 var html = $('#atvideo_tmpl').html();
                 var nvideo = $('.small-player').length;
@@ -909,7 +908,7 @@
                 }else{
                     return;
                 }
-            });
+            });*/
 
             //一分钟了解安团 小窗口视频关闭
             $(document).on('click','.small-player .js_close_atv',function(){

@@ -12,6 +12,6 @@ class Main extends MY_Controller {
     }
 
     public function index() {
-        $this->load->view('main/index.html');
+        redirect(creat_url('user/Usermanagement/index'));
     }
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +7,22 @@
     <meta name="description" content="和家是为业主打造的线下、线上的团购平台，找效果图，看样板房，找设计师、找水电工、泥瓦工、木工等，买装修材料、家具电器，一站式购齐，轻松省三万，家庭装修就上和家" />
     <meta charset="utf-8" />
     <base target="_self" />
-    <link href="/static/images/antuan.ico" rel="icon" />
 
     <link href="https://cdn.file3.goodid.com/ID/static/??lib/jquery.ui/1.10.4/jquery.ui.min.css" rel="stylesheet"></link>
     <!-- <link href="https://cdn.file3.goodid.com/ID/static/??lib/jquery.ui/1.10.4/jquery.ui.min.css" rel="stylesheet"></link> -->
     <!--<link href="ba" rel="stylesheet"></link>-->
     <link rel="stylesheet" type="text/css" href="<?=base_url('result/static/css/base.css')?>"/>
     <link rel="stylesheet" type="text/css" href="<?=base_url('result/static/css/new_common.css')?>"/>
-
+    <style>
+        .ui-button-text{
+            padding: 0 !important;
+            text-indent:0 !important;
+        }
+    </style>
 </head>
-
+<div class="top-bar" style="position: fixed;bottom: 0;left:19%;z-index: 9999;">
+    <img src="<?=base_url('result/static/images/my/topBar.jpg')?>">
+</div>
 <body>
 <div class="header_at">
     <link rel="stylesheet" type="text/css" href="<?=base_url('result/static/css/new_index.css')?>"/>
@@ -56,7 +61,7 @@
                                         <span>0551-63529003</span>
                                     </p>
                                     <p class="wx_code_p1">关注和家官方微信号</p>
-                                    <img width="101" height="101" src="https://cdn.file0.antuan.com/2017/12/01/67bac359808c.png" alt="和家家博会" />
+                                    <img width="101" height="101" src="" alt="和家家博会" />
                                     <p class="wx_code_p2">安全安心 团购优选</p>
                                 </div>
                             </div>
@@ -71,11 +76,11 @@
             </div>
         </div>
     </div>
-    <div class="header_middle clearfix">
+    <div class="header_middle clearfix" style="display: flex;">
         <div class="logo_div">
-            <a class="logo" target="_blank" href="https://www.antuan.com"></a>
+            <a class="logo" target="_blank" href="https://www.hejiacom"></a>
         </div>
-        <div class="l header_city">
+        <!--<div class="l header_city">
             <div>
                 <div class="city_name">
                     <a href="javascript:;"></a>
@@ -93,20 +98,21 @@
                 </div>
             </div>
             <p style="font-size:12px;color:#666;line-height:22px;">一站式购齐  省心省钱省力</p>
-        </div>
+        </div>-->
         <div class="search_box l clearfix">
-            <form method="post" action="https://www.antuan.com/indexm/get_search_list">
+
+            <!--<form method="post" action="https://www.hejiacom/indexm/get_search_list">
                 <div class="search_item">
                     <span>装修攻略<em></em></span>
                     <ul>
-                        <li><a href="https://www.antuan.com/zhuangxiugonglue" target="_blank">装修攻略</a></li>
+                        <li><a href="https://www.hejiacom/zhuangxiugonglue" target="_blank">装修攻略</a></li>
                     </ul>
                 </div>
                 <label class="search_con">
                     <input type="text" class="search_input" autocomplete="off" name="keyword" >
                     <input type="submit" value="搜索" class="search_btn">
                 </label>
-            </form>
+            </form>-->
         </div>
         <!-- <div class="l header_safe">
         </div> -->
@@ -129,27 +135,36 @@
                     <ul class="clearfix">
                         <li class="item clearfix ">
                             <div class="nav_bd shouye">
-                                <a class="nav_title" href="https://www.antuan.com/home/index" target="_blank">
-                                    首页</a>
+                                <a class="nav_title" href="https://www.hejia.com/home/index" target="_blank">
+                                    首页
+                                </a>
                             </div>
                         </li>
-                        <li class="nav_antuan arrowdown item clearfix on">
+                        <li class="item clearfix ">
+                            <div class="nav_bd shouye">
+                                <a class="nav_title" href="<?=base_url()?>">
+                                    和家家博会
+                                </a>
+                            </div>
+                        </li>
+
+                       <!-- <li class="nav_antuan arrowdown item clearfix on">
                             <div class="nav_bd">
-                                <!-- <a class="nav_title" href="https://www.antuan.com" target="_blank">和家家博会</a>
-                            <i></i> -->
-                                <a class="nav_title" href="https://www.antuan.com" target="_blank">
+                                &lt;!&ndash; <a class="nav_title" href="https://www.hejiacom" target="_blank">和家家博会</a>
+                            <i></i> &ndash;&gt;
+                                <a class="nav_title" href="https://www.hejiacom" target="_blank">
                                     <span>和家家博会</span>
                                     <i></i>
                                 </a>
-                                <div class="foldmore">
+                               &lt;!&ndash; <div class="foldmore">
                                     <ul>
-                                        <li><a href="https://www.antuan.com/#floor3" target="_blank">活动品牌</a></li>
-                                        <li><a href="https://www.antuan.com/#floor6" target="_blank">活动须知</a></li>
-                                        <li><a href="https://www.antuan.com/#floor4" target="_blank">订单券</a></li>
-                                        <li><a href="https://www.antuan.com/#vipservice" target="_blank">VIP领票服务</a></li>
-                                        <li class="bbn"><a href="https://www.antuan.com/about/history" target="_blank">往届回顾</a></li>
+                                        <li><a href="https://www.hejiacom/#floor3" target="_blank">活动品牌</a></li>
+                                        <li><a href="https://www.hejiacom/#floor6" target="_blank">活动须知</a></li>
+                                        <li><a href="https://www.hejiacom/#floor4" target="_blank">订单券</a></li>
+                                        <li><a href="https://www.hejiacom/#vipservice" target="_blank">VIP领票服务</a></li>
+                                        <li class="bbn"><a href="https://www.hejiacom/about/history" target="_blank">往届回顾</a></li>
                                     </ul>
-                                </div>
+                                </div>&ndash;&gt;
                             </div>
                         </li>
                         <li class="item clearfix">
@@ -159,9 +174,9 @@
                         </li>
                         <li class="nav_effect arrowdown item clearfix ">
                             <div class="nav_bd nav_xgt">
-                                <!-- <a class="nav_title" href="https://www.antuan.com/effect" target="_blank">装修效果图</a>
-                            <i></i> -->
-                                <a class="nav_title" href="https://www.antuan.com/yangbanjian" target="_blank">
+                                &lt;!&ndash; <a class="nav_title" href="https://www.hejiacom/effect" target="_blank">装修效果图</a>
+                            <i></i> &ndash;&gt;
+                                <a class="nav_title" href="https://www.hejiacom/yangbanjian" target="_blank">
                                     <em class="leftline"></em>
                                     <span>效果图</span>
                                     <i></i>
@@ -169,40 +184,40 @@
                                 </a>
                                 <div class="foldmore">
                                     <ul>
-                                        <li class="bbn"><a href="https://www.antuan.com/yangbanjian" target="_blank">套图</a></li>
-                                        <li><a href="https://www.antuan.com/xiaoguotu" target="_blank">单图</a></li>
-                                        <li><a href="https://www.antuan.com/vr" target="_blank">3D效果图</a></li>
+                                        <li class="bbn"><a href="https://www.hejiacom/yangbanjian" target="_blank">套图</a></li>
+                                        <li><a href="https://www.hejiacom/xiaoguotu" target="_blank">单图</a></li>
+                                        <li><a href="https://www.hejiacom/vr" target="_blank">3D效果图</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
                         <li class="nav_zx arrowdown item clearfix ">
                             <div class="nav_bd">
-                                <!-- <a class="nav_title" href="https://www.antuan.com/zhuangxiugonglue" target="_blank">装修攻略</a>
-                            <i></i> -->
-                                <a class="nav_title" href="https://www.antuan.com/zhuangxiugonglue" target="_blank">
+                                &lt;!&ndash; <a class="nav_title" href="https://www.hejiacom/zhuangxiugonglue" target="_blank">装修攻略</a>
+                            <i></i> &ndash;&gt;
+                                <a class="nav_title" href="https://www.hejiacom/zhuangxiugonglue" target="_blank">
                                     <span>装修攻略</span>
                                     <i></i>
                                 </a>
                                 <div class="foldmore">
                                     <ul>
-                                        <li><a href="https://www.antuan.com/zhuangxiugonglue/shineisheji" target="_blank">室内设计</a></li>
-                                        <li><a href="https://www.antuan.com/zhuangxiugonglue/jiancaixuangou" target="_blank">建材选购</a></li>
-                                        <li><a href="https://www.antuan.com/zhuangxiugonglue/shoufangyanfang" target="_blank">收房验房</a></li>
-                                        <li><a href="https://www.antuan.com/zhuangxiugonglue/zhuangxiuyusuan" target="_blank">装修预算</a></li>
-                                        <li class="bbn"><a href="https://www.antuan.com/zhuangxiugonglue/xinwenzixun" target="_blank">新闻资讯</a></li>
+                                        <li><a href="https://www.hejiacom/zhuangxiugonglue/shineisheji" target="_blank">室内设计</a></li>
+                                        <li><a href="https://www.hejiacom/zhuangxiugonglue/jiancaixuangou" target="_blank">建材选购</a></li>
+                                        <li><a href="https://www.hejiacom/zhuangxiugonglue/shoufangyanfang" target="_blank">收房验房</a></li>
+                                        <li><a href="https://www.hejiacom/zhuangxiugonglue/zhuangxiuyusuan" target="_blank">装修预算</a></li>
+                                        <li class="bbn"><a href="https://www.hejiacom/zhuangxiugonglue/xinwenzixun" target="_blank">新闻资讯</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
                         <li class="margin-0 nav_tool item ">
                             <div class="nav_bd zxgj">
-                                <a class="nav_title" href="https://www.antuan.com/tools" target="_blank">装修工具</a>
+                                <a class="nav_title" href="https://www.hejiacom/tools" target="_blank">装修工具</a>
                             </div>
-                        </li>
+                        </li>-->
                         <!--<li class="nav_evaluate item ">
                         <div class="nav_bd">
-                            <a class="nav_title" href="https://www.antuan.com/evaluate" target="_blank">房屋评估</a>
+                            <a class="nav_title" href="https://www.hejiacom/evaluate" target="_blank">房屋评估</a>
                         </div>
                     </li>-->
                     </ul>
@@ -216,7 +231,7 @@
 <link href="<?=base_url('result/static/css/new_index.css')?>" rel="stylesheet"><div class="con">
     <!-- 头部 -->
     <div class="main-nav">
-        <div class="banner" style="background:url(<?=base_url('result/static/images/my/banner.jpg')?>) center top no-repeat;">
+        <div class="banner" style="background:url(<?=base_url('result/static/images/my/banner1.jpg')?>) center top no-repeat;">
             <div class="clearfix apply-wrap">
                 <div class="r apply">
                     <!--<div class="sign-num">
@@ -290,107 +305,6 @@
                                         </li>
                                     </ul>
                                     <?php endforeach;?>
-                                    <!--<ul class="clearfix">
-                                        <li class="clearfix">
-                                            <div class="linecols ll">
-                                                <ul>
-                                                    <li style="margin-right:4px;">肥西县</li>
-                                                    <li class="li_name">黄**</li>
-                                                    <li class="li_phone">180*****798</li>
-                                                    <li class="li_enter">客服已确认</li>
-                                                </ul>
-
-                                                &lt;!&ndash;<ul class="clearfix">
-                                                    <li style="margin-right:.2rem;" class="l">肥西县</li>
-                                                    <li class="l li_name">黄**</li>
-                                                    <li class="l li_num">180*****798</li>
-                                                    <li class="r li_enter"><font color="red">一分钟分钟前客服已确认</font></li>
-                                                </ul>&ndash;&gt;
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li class="clearfix">
-                                            <div class="linecols ll">
-                                                <ul>
-                                                    <li style="margin-right:4px;">包河区</li>
-                                                    <li class="li_name">倪**</li>
-                                                    <li class="li_phone">152*****589</li>
-                                                    <li class="li_enter">客服已确认</li>
-                                                </ul>
-
-                                                &lt;!&ndash;<ul class="clearfix">
-                                                    <li style="margin-right:.2rem;" class="l">包河区</li>
-                                                    <li class="l li_name">倪**</li>
-                                                    <li class="l li_num">152*****589</li>
-                                                    <li class="r li_enter"><font color="red">五分钟分钟前客服已确认</font></li>
-                                                </ul>&ndash;&gt;
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li class="clearfix">
-                                            <div class="linecols ll">
-                                                <ul>
-                                                    <li style="margin-right:4px;">肥西县</li>
-                                                    <li class="li_name">严**</li>
-                                                    <li class="li_phone">157*****115</li>
-                                                    <li class="li_enter">客服已确认</li>
-                                                </ul>
-
-                                                &lt;!&ndash;<ul class="clearfix">
-                                                    <li style="margin-right:.2rem;" class="l">肥西县</li>
-                                                    <li class="l li_name">严**</li>
-                                                    <li class="l li_num">157*****115</li>
-                                                    <li class="r li_enter"><font color="red">一分钟分钟前客服已确认</font></li>
-                                                </ul>&ndash;&gt;
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li class="clearfix">
-                                            <div class="linecols ll">
-                                                <ul>
-                                                    <li style="margin-right:4px;">瑶海区</li>
-                                                    <li class="li_name">杨**</li>
-                                                    <li class="li_phone">150*****833</li>
-                                                    <li class="li_enter">客服已确认</li>
-                                                </ul>
-
-                                                &lt;!&ndash;<ul class="clearfix">
-                                                    <li style="margin-right:.2rem;" class="l">瑶海区</li>
-                                                    <li class="l li_name">杨**</li>
-                                                    <li class="l li_num">150*****833</li>
-                                                    <li class="r li_enter"><font color="red">三小时分钟前客服已确认</font></li>
-                                                </ul>&ndash;&gt;
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li class="clearfix">
-                                            <div class="linecols ll">
-                                                <ul>
-                                                    <li style="margin-right:4px;">肥西县</li>
-                                                    <li class="li_name">毛**</li>
-                                                    <li class="li_phone">136*****379</li>
-                                                    <li class="li_enter">客服已确认</li>
-                                                </ul>
-
-                                                &lt;!&ndash;<ul class="clearfix">
-                                                    <li style="margin-right:.2rem;" class="l">肥西县</li>
-                                                    <li class="l li_name">毛**</li>
-                                                    <li class="l li_num">136*****379</li>
-                                                    <li class="r li_enter"><font color="red">五小时分钟前客服已确认</font></li>
-                                                </ul>&ndash;&gt;
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                 -->
                                 </div>
                                 <div id="scroll_area"></div>
                             </div>
@@ -413,31 +327,31 @@
                         <ul>
                             <li>
                                 <div class="house_item">
-                                    <img src="https://cdn.file0.antuan.com/2017/07/06/98c7ba19770f.jpg" width="283" height="111"/>
+                                    <img src="<?=base_url('result/static/images/my/fang1.jpg')?>" width="283" height="111"/>
                                     <div class="markbg"></div>
                                     <div class="order-num">
-                                        <p>经开区国开公馆 </p>
-                                        <span>已预约<em>19户</em></span>
+                                       <!-- <p>万科四季花城 </p>
+                                        <span>已预约<em>800户</em></span>-->
                                     </div>
                                 </div>
                                 <div class="house_item">
-                                    <img src="https://cdn.file0.antuan.com/2017/07/06/b2ad35f405a4.jpg" width="283" height="111"/>
+                                    <img src="<?=base_url('result/static/images/my/fang2.jpg')?>" width="283" height="111"/>
                                     <div class="markbg"></div>
                                     <div class="order-num">
-                                        <p>保利东郡 </p>
-                                        <span>已预约<em>43户</em></span>
+                                        <!--<p>亚欧国际风情街 </p>
+                                        <span>已预约<em>800户</em></span>-->
                                     </div>
                                 </div>
                                 <div class="house_item">
-                                    <img src="https://cdn.file0.antuan.com/2017/07/06/311bb1b3be27.jpg" width="283" height="111"/>
+                                    <img src="<?=base_url('result/static/images/my/fang2.jpg')?>" width="283" height="111"/>
                                     <div class="markbg"></div>
                                     <div class="order-num">
-                                        <p>航空新城 </p>
-                                        <span>已预约<em>46户</em></span>
+                                       <!-- <p>伊水湾 </p>
+                                        <span>已预约<em>800户</em></span>-->
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                           <!-- <li>
                                 <div class="house_item">
                                     <img src="https://cdn.file0.antuan.com/2017/07/07/9123f0673395.jpg" width="283" height="111"/>
                                     <div class="markbg"></div>
@@ -465,7 +379,7 @@
                             </li>
                             <li>
                                 <div class="house_item">
-                                    <img src="https://cdn.file0.antuan.com/2017/07/07/bc0e951d11f4.jpg" width="283" height="111"/>
+                                    <img src="" width="283" height="111"/>
                                     <div class="markbg"></div>
                                     <div class="order-num">
                                         <p>文一名门南郡 </p>
@@ -498,6 +412,7 @@
                                         <span>已预约<em>12户</em></span>
                                     </div>
                                 </div>
+                        -->
                         </ul>
                     </div>
                 </div>
@@ -514,7 +429,7 @@
             <p class="subtitle">我们为您提供无忧保障，让您省钱，省心，省力</p>
         </div>
         <div class="l at-advtange-left">
-            <img src="<?=base_url('result/static/images/index/advtange.jpg')?>" width="591" height="664"/>
+            <img src="<?=base_url('result/static/images/my/advtange.jpg')?>" width="591" height="664"/>
         </div>
         <div class="l at-advtange-right">
             <div class="advtange-item price-advtange">
@@ -647,7 +562,7 @@
                 <li>
                     <div class="reason-num"><i class="i1"></i></div>
                     <div class="reason-desc">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/reason1.jpg"/>
+                        <img class="lazy" src="<?=base_url('result/static/images/my/reason1.jpg')?>" data-original=""/>
                         <h4>品牌多 规模大</h4>
                         <p>精选800多种品牌全城团购预订会，商家签署保价协议</p>
                     </div>
@@ -655,7 +570,7 @@
                 <li>
                     <div class="reason-num"><i class="i2"></i></div>
                     <div class="reason-desc">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/reason2.jpg"/>
+                        <img class="lazy" src="<?=base_url('result/static/images/my/reason2.jpg')?>" data-original=""/>
                         <h4>种类多 产品多</h4>
                         <p>覆盖家装、建材、家具、家电等<br>数十万商品，任你挑选</p>
                     </div>
@@ -663,7 +578,7 @@
                 <li class="mrnone">
                     <div class="reason-num"><i class="i3"></i></div>
                     <div class="reason-desc">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/reason3.jpg"/>
+                        <img class="lazy" src="<?=base_url('result/static/images/my/reason3.jpg')?>" data-original=""/>
                         <h4>价格低 能省钱</h4>
                         <p>爆款秒杀产品，数千款产品低至<br>2折，全套采购立省3-5万</p>
                     </div>
@@ -673,7 +588,7 @@
                 <li>
                     <div class="reason-num"><i class="i4"></i></div>
                     <div class="reason-desc">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/reason4.jpg"/>
+                        <img class="lazy" src="<?=base_url('result/static/images/my/reason4.jpg')?>" data-original=""/>
                         <h4>口碑好 可信赖</h4>
                         <p>专注家装团购十二年，省心省钱<br>又省力</p>
                     </div>
@@ -681,7 +596,7 @@
                 <li class="mrnone">
                     <div class="reason-num"><i class="i5"></i></div>
                     <div class="reason-desc">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/reason5.jpg"/>
+                        <img class="lazy" src="<?=base_url('result/static/images/my/reason5.jpg')?>" data-original=""/>
                         <h4>好服务 有保障</h4>
                         <p>现场下单保价半年，30天内无理<br>由退单，充分保障装修业主的消费利益</p>
                     </div>
@@ -729,7 +644,7 @@
                <!-- <li  data-original="3599.00" data-special="1099" data-name="TATA木门后时代镜风@001金楸色">
                     <div class="special-unit">
                         <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/09/30/26b6cdb0fd1d.jpg" width="100%" alt="和家家博会">
+                            <img class="lazy" src="" data-original="https://cdn.file0.antuan.com/2017/09/30/26b6cdb0fd1d.jpg" width="100%" alt="和家家博会">
                         </div>
                         <div class="at-special-content">
                             <h3 title="TATA木门后时代镜风@001金楸色">TATA木门后时代镜风@001金楸色</h3>
@@ -895,63 +810,63 @@
             <ul class="clearfix">
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/83252d3957c7.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order1.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">46头骨质餐具</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/6eb9660afdd8.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order2.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">金貂绒毯子</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/28579501a560.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order3.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">月亮椅</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/dc5f543a0816.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order4.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">美菱挂烫机</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/d9b31a7cdad5.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order5.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">九阳豆浆机</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/08/d423d69cc4e2.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order6.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">联创3L全自动电饭煲</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/db1f8ff88232.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order7.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">美的微波炉</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/b67d9376ca84.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order8.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">高端苹果金锅具三件套</p>
                 </li>
                 <li action="receive">
                     <div class="img-wrap">
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/12173a146901.jpg" width="392" height="268" alt="和家家博会" />
+                        <img class="lazy" src="<?=base_url('result/static/images/my/order9.jpg')?>" data-original="" width="392" height="268" alt="和家家博会" />
                     </div>
                     <p class="ellip">吸尘器</p>
                 </li>
             </ul>
         </div>
-        <div class="loadmore">
+        <!--<div class="loadmore">
             <a action="receive">立即参加</a>
-        </div>
+        </div>-->
     </div>
 
     <!--VIP服务-->
@@ -1109,18 +1024,18 @@
             </div>
             <p class="subtitle">用户的选择，就是最好的证明！</p>
         </div>
-        <div id="s-slide-history" class="at-slide clearfix l">
+        <div id="s-slide-historyJ" class="at-slide clearfix l">
             <div class="s-slide-pic at-slide-pic">
                 <ul>
                     <li>
                         <div class="slide-item">
                             <div class="imglist">
-                                <img class="lazy img_0" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/8253fd44da56.jpg"/>
-                                <img class="lazy img_1" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/fd3ab88a964f.jpg"/>
-                                <img class="lazy img_2" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/856ad0a5464e.jpg"/>
-                                <img class="lazy img_3" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/608127bac5cb.jpg"/>
-                                <img class="lazy img_4" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/d79be9480216.jpg"/>
-                                <img class="lazy img_5" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/f3f535f3a057.jpg"/>
+                                <img class="lazy img_0" src="<?=base_url('result/static/images/my/lishi1.jpg')?>" data-original=""/>
+                                <img class="lazy img_1" src="<?=base_url('result/static/images/my/lishi2.jpg')?>" data-original=""/>
+                                <img class="lazy img_2" src="<?=base_url('result/static/images/my/lishi3.jpg')?>" data-original=""/>
+                                <img class="lazy img_3" src="<?=base_url('result/static/images/my/lishi4.jpg')?>" data-original=""/>
+                                <img class="lazy img_4" src="<?=base_url('result/static/images/my/lishi5.jpg')?>" data-original=""/>
+                                <img class="lazy img_5" src="<?=base_url('result/static/images/my/lishi6.jpg')?>" data-original=""/>
                             </div>
                             <div class="hirtory_desc">
                                 <h5 class="act_yj">2017年和家继续扬帆起航</h5>
@@ -1131,12 +1046,12 @@
                     <li>
                         <div class="slide-item">
                             <div class="imglist">
-                                <img class="lazy img_0" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/5d4050f41e3c.jpg"/>
-                                <img class="lazy img_1" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/97d84a08da1c.jpg"/>
-                                <img class="lazy img_2" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/779fe697332e.jpg"/>
-                                <img class="lazy img_3" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/fa74b3a9cf20.jpg"/>
-                                <img class="lazy img_4" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/69ff70625947.jpg"/>
-                                <img class="lazy img_5" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/9505f9fbf1a1.jpg"/>
+                                <img class="lazy img_0" src="<?=base_url('result/static/images/my/lishi7.jpg')?>" data-original=""/>
+                                <img class="lazy img_1" src="<?=base_url('result/static/images/my/lishi8.jpg')?>" data-original=""/>
+                                <img class="lazy img_2" src="<?=base_url('result/static/images/my/lishi9.jpg')?>" data-original=""/>
+                                <img class="lazy img_3" src="<?=base_url('result/static/images/my/lishi10.jpg')?>" data-original=""/>
+                                <img class="lazy img_4" src="<?=base_url('result/static/images/my/lishi11.jpg')?>" data-original=""/>
+                                <img class="lazy img_5" src="<?=base_url('result/static/images/my/lishi12.jpg')?>" data-original=""/>
                             </div>
                             <div class="hirtory_desc">
                                 <h5 class="act_yj">2016年和家服务业主数量再次突破</h5>
@@ -1144,90 +1059,10 @@
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="slide-item">
-                            <div class="imglist">
-                                <img class="lazy img_0" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/47bdb958bff2.jpg"/>
-                                <img class="lazy img_1" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/530ea5fe633f.jpg"/>
-                                <img class="lazy img_2" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/ba73c4b15146.jpg"/>
-                                <img class="lazy img_3" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/8052fdbb76c6.jpg"/>
-                                <img class="lazy img_4" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/2413a9b0673d.jpg"/>
-                                <img class="lazy img_5" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/05/072ac4fdaf9b.jpg"/>
-                            </div>
-                            <div class="hirtory_desc">
-                                <h5 class="act_yj">2015年和家家博会服务继续升级</h5>
-                                <p class="act_desc">10大承诺，告别装修奔波之苦。</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="slide-item">
-                            <div class="imglist">
-                                <img class="lazy img_0" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/d783f890338b.jpg"/>
-                                <img class="lazy img_1" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/280fcfa140dd.jpg"/>
-                                <img class="lazy img_2" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/13ced04a7433.jpg"/>
-                                <img class="lazy img_3" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/4d571a5ba3a6.jpg"/>
-                                <img class="lazy img_4" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/aae94cee2c01.jpg"/>
-                                <img class="lazy img_5" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/f4f25a369303.jpg"/>
-                            </div>
-                            <div class="hirtory_desc">
-                                <h5 class="act_yj">2014年和家始终以服务业主为重心</h5>
-                                <p class="act_desc">真正解决绝大多数新业主在装修中遇到的各种烦恼。</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="slide-item">
-                            <div class="imglist">
-                                <img class="lazy img_0" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/b0664be9ab6f.jpg"/>
-                                <img class="lazy img_1" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/7e8499b0d143.jpg"/>
-                                <img class="lazy img_2" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/4f0b3ee8e80a.jpg"/>
-                                <img class="lazy img_3" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/b06a922b20ef.jpg"/>
-                                <img class="lazy img_4" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/2fe43530f6a1.jpg"/>
-                                <img class="lazy img_5" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/5e0e8a2b4c8e.jpg"/>
-                            </div>
-                            <div class="hirtory_desc">
-                                <h5 class="act_yj">2013年和家战略合作品牌超越1000家</h5>
-                                <p class="act_desc">装修60项大类，1000多种品牌，更多选择、更多比较，只为让你更满意。</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="slide-item">
-                            <div class="imglist">
-                                <img class="lazy img_0" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/761214f547b6.jpg"/>
-                                <img class="lazy img_1" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/f7598d751abb.jpg"/>
-                                <img class="lazy img_2" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/8a1b8cbca8df.jpg"/>
-                                <img class="lazy img_3" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/b143523b960e.jpg"/>
-                                <img class="lazy img_4" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/cf97ae987f17.jpg"/>
-                                <img class="lazy img_5" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/06/4357d5f0c6cc.jpg"/>
-                            </div>
-                            <div class="hirtory_desc">
-                                <h5 class="act_yj">2012年“和家”成功注册品牌商标</h5>
-                                <p class="act_desc">经国家工商部门批准，成功注册“和家”品牌商标，服务省心省钱更安全。</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="slide-item">
-                            <div class="imglist">
-                                <img class="lazy img_0" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/3b6ca4523cbc.jpg"/>
-                                <img class="lazy img_1" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/e4d6c29ebd2c.jpg"/>
-                                <img class="lazy img_2" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/ce5b703ff7a4.jpg"/>
-                                <img class="lazy img_3" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/ad61f182ecf6.jpg"/>
-                                <img class="lazy img_4" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/dd5789f0f75a.jpg"/>
-                                <img class="lazy img_5" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/07/897880cdda61.jpg"/>
-                            </div>
-                            <div class="hirtory_desc">
-                                <h5 class="act_yj">2011年和家家博会规模越来越大</h5>
-                                <p class="act_desc">感谢业主们的信任，和家将全心全意为您挑选最具性价比的品牌参展商</p>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>
-        <div class="partbtn"><a action="receive" class="partin">我也要参加</a></div>
+        <!--<div class="partbtn"><a action="receive" class="partin">我也要参加</a></div>-->
     </div>
     <!--map_dome-->
     <div id="floor10">
@@ -1412,19 +1247,19 @@
         </div>
         <div class="introduce-wrap clearfix">
             <div class="l introduce-atjbh">
-                <p>和家www.antuan.com成立于2005年，以华东为中心，面向全国，现已在合肥、郑州、武汉、长沙、杭州、昆明、贵阳、青岛等地成立分公司。我们始终坚持一切为了客户的利益为服务宗旨，2018-2020年和家将在西安、苏州、成都、天津、广州、上海、北京、深圳等地开设分公司。实现线上线下结合，为家装、建材、家具、家电、婚庆等广大厂商与装修业主和婚庆服务提供一个省心省钱便捷的交易平台。和家家博会，历经十二年的风雨耕耘，已经成功举办过70多场万人团购预订会，与2000多个畅销品牌保持长期战略合作，为100多万户装修业主提供了省心省钱便捷的团购服务，在全国家居会展团购行业中稳居前列！</p>
+                <p>和家www.hejia.com成立于2005年，以华东为中心，面向全国，现已在合肥、郑州、武汉、长沙、杭州、昆明、贵阳、青岛等地成立分公司。我们始终坚持一切为了客户的利益为服务宗旨，2018-2020年和家将在西安、苏州、成都、天津、广州、上海、北京、深圳等地开设分公司。实现线上线下结合，为家装、建材、家具、家电、婚庆等广大厂商与装修业主和婚庆服务提供一个省心省钱便捷的交易平台。和家家博会，历经十二年的风雨耕耘，已经成功举办过70多场万人团购预订会，与2000多个畅销品牌保持长期战略合作，为100多万户装修业主提供了省心省钱便捷的团购服务，在全国家居会展团购行业中稳居前列！</p>
                 <ul>
-                    <li><img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/adv1.jpg" width="190" height="132" alt="和家家博会"></li>
-                    <li><img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/adv2.jpg" width="190" height="132" alt="和家家博会"></li>
-                    <li><img class="lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/adv3.jpg" width="190" height="132" alt="和家家博会"></li>
+                    <li><img class="lazy" src="<?=base_url('result/static/images/my/adv1.jpg')?>" data-original="" width="190" height="132" alt="和家家博会"></li>
+                    <li><img class="lazy" src="<?=base_url('result/static/images/my/adv2.jpg')?>" data-original="/static/images/index/adv2.jpg" width="190" height="132" alt="和家家博会"></li>
+                    <li><img class="lazy" src="<?=base_url('result/static/images/my/adv3.jpg')?>" data-original="/static/images/index/adv3.jpg" width="190" height="132" alt="和家家博会"></li>
                 </ul>
             </div>
-            <img class="introduce-img lazy" src="/static/images/common/grey.gif" data-original="/static/images/index/at_introduce.jpg" width="504" height="400" alt="和家家博会">
+            <img class="introduce-img lazy" src="<?=base_url('result/static/images/my/at_introduce.jpg')?>" data-original="" width="504" height="400" alt="和家家博会">
         </div>
     </div>
 
     <!-- 合作媒体 -->
-    <div class="at-media clearfix" id="floor12">
+   <!-- <div class="at-media clearfix" id="floor12">
         <div class="base-title">
             <div class="base-headline">
                 <h3>合作媒体</h3>
@@ -1435,55 +1270,55 @@
             <div class="l left-wrap">
                 <ul class="clearfix">
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/f63a214d1159.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/b0e89761d1ce.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/a8742cfea4c9.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/37f0db757554.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/b59f51722dd3.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/02bb3459b5d1.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/9c59012d28b7.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/afa93628b4cf.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/852ce43a3b37.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/8cb67751395e.jpg" width="266" height="128" />
+                        <img class="lazy" src="" data-original="" width="266" height="128" />
                     </li>
                 </ul>
             </div>
             <div class="l right-wrap">
                 <ul class="clearfix">
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/77734b1da92b.jpg" width="292" height="335" />
+                        <img class="lazy" src="" data-original="" width="292" height="335" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/ec14be0d70b6.jpg" width="292" height="335" />
+                        <img class="lazy" src="" data-original="" width="292" height="335" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/07/26/7370581c412a.jpg" width="292" height="335" />
+                        <img class="lazy" src="" data-original="" width="292" height="335" />
                     </li>
                     <li>
-                        <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/06/21/081e9594aebd.jpg" width="292" height="335" />
+                        <img class="lazy" src="" data-original="" width="292" height="335" />
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!--口碑与心声-->
     <div class="at-voice" id="floor13">
@@ -1838,7 +1673,7 @@
         <li id="fl9" class="fl9 fnav"><a>历史回顾</a></li>
         <li id="fl10" class="fl10 fnav"><a>地图流程</a></li>
         <li id="fl11" class="fl11 fnav"><a>和家简介</a></li>
-        <li id="fl12" class="fl12 fnav"><a>合作媒体</a></li>
+        <!--<li id="fl12" class="fl12 fnav"><a>合作媒体</a></li>-->
         <li id="fl13" class="fl13 fnav"><a>口碑心声</a></li>
         <li class="top bbn">
             <a></a>
@@ -1857,6 +1692,7 @@
     var EVENT_TIME = '2018-03-16 08:00:00';
     var STATUS = '3';
 </script>
+
 <script id="tickets_tmpl" type="text/x-jquery-tmpl">
 <!--<img src="/static/images/20160521/dialog_img2.png" width="545" height="179" />-->
 <!-- <img src="" width="545" height="179" /> -->
@@ -2206,29 +2042,14 @@
 <ul>
 <li class="video mr">
 <div class="yzvideo-wrap">
-<!--[if IE 6]><embed src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_fenda.mp4" width="100%" autostart=false loop=100 ></embed><![endif]-->
-<!--[if IE 7]><embed src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_fenda.mp4" width="100%" height="325" autostart=false loop=100 ></embed><![endif]-->
-<!--[if IE 8]><embed src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_fenda.mp4" width="100%" height="325" autostart=false loop=100 ></embed><![endif]-->
-<video class="hl-videos" src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_fenda.mp4" width="100%" height="325" autobuffer autoloop loop controls>
-</video>
+<img class="hl-videos" src="<?=base_url('result/static/images/my/fiexdL.jpg')?>" width="100%" height="325"/>
 </div>
-<p class="yzxx">
-<span class="l">和家随访&nbsp;业主现身说法</span>
-<span class="r">丰大国际&nbsp;黄先生</span>
-</p>
 </li>
 <li class="video">
 <div class="yzvideo-wrap">
-<!--[if IE 6]><embed src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_yufei.mp4" width="100%" autostart=false loop=100 ></embed><![endif]-->
-<!--[if IE 7]><embed src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_yufei.mp4" width="100%" height="325" autostart=false loop=100 ></embed><![endif]-->
-<!--[if IE 8]><embed src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_yufei.mp4" width="100%" height="325" autostart=false loop=100 ></embed><![endif]-->
-<video class="hl-videos" src="https://cdn.file3.goodid.com/ID/static/antuan/video/antuan_yufei.mp4" width="100%" height="325" autobuffer autoloop loop controls>
-</video>
+<img class="hl-videos" src="<?=base_url('result/static/images/my/fiexdR.jpg')?>" width="100%" height="325"/>
 </div>
-<p class="yzxx">
-<span class="l">和家随访&nbsp;业主现身说法</span>
-<span class="r">海亮九玺&nbsp;王女士</span>
-</p>
+</div>
 </li>
 </ul>
 </div>
@@ -2306,7 +2127,7 @@
 <!-- Piwik -->
 <script type="text/javascript">
     var _paq = _paq || [];
-    _paq.push(["setDomains", ["*.antuan.com","*.520.antuan.com","*.m.antuan.com","*.mzz.antuan.com","*.www.antuan.com","*.zz.antuan.com"]]);
+    _paq.push(["setDomains", ["*.antuan.com","*.520.antuan.com","*.m.antuan.com","*.mzz.antuan.com","*.www.hejiacom","*.zz.antuan.com"]]);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
@@ -2319,6 +2140,7 @@
 </script>
 <noscript><p><img src="//tongji.antuan.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
+<script src="<?=base_url('result/static/js/config.js')?>"></script>
 <script src="<?=base_url('result/static/js/core/jquery.focus.min.js')?>"></script>
 <script src="<?=base_url('result/static/js/core/jquery.slide.min.js')?>"></script>
 <script src="<?=base_url('result/static/js/core/placeholder.min.js')?>"></script>
@@ -2328,7 +2150,11 @@
 <script src="<?=base_url('result/static/js/app//new_index.js')?>"></script>
 <script src="<?=base_url('result/static/js/core/core.js')?>"></script>
 <script src="<?=base_url('result/static/js/core/app.js')?>"></script>
-
+<script>
+    $(document).ready(function () {
+        console.log($(".ui-button-text").text());
+    });
+</script>
 <div class="footer">
     <div class="ensure">
         <ul style="width:750px;" class="clearfix detail">
@@ -2361,17 +2187,17 @@
                     <dd><a rel="nofollow" href="/#floor6">优惠力度</a></dd>
                     <dd><a rel="nofollow" href="/#floor2">品牌优惠</a></dd>
                     <dd><a rel="0" action="receive" href="javascript:void(0)">VIP票服务</a></dd>
-                    <!-- <dd><a rel="nofollow" href="https://www.antuan.com/#floor8" target="_blank">VIP票服务</a></dd>    -->
-                    <!-- <dd><a rel="0" href="https://www.antuan.com/#bm" target="_blank">报名热线</a></dd>
-                    <dd><a rel="6" href="https://www.antuan.com/#floor6" target="_blank">优惠力度</a></dd>
-                    <dd><a rel="2" href="https://www.antuan.com/#floor2" target="_blank">品牌优惠</a></dd>
+                    <!-- <dd><a rel="nofollow" href="https://www.hejiacom/#floor8" target="_blank">VIP票服务</a></dd>    -->
+                    <!-- <dd><a rel="0" href="https://www.hejiacom/#bm" target="_blank">报名热线</a></dd>
+                    <dd><a rel="6" href="https://www.hejiacom/#floor6" target="_blank">优惠力度</a></dd>
+                    <dd><a rel="2" href="https://www.hejiacom/#floor2" target="_blank">品牌优惠</a></dd>
                     <dd><a rel="0" action="receive" href="javascript:void(0)">VIP票服务</a></dd> -->
                 </dl>
                 <dl>
                     <dt>服务保障</dt>
-                    <dd><a rel="nofollow" href="https://www.antuan.com/user_home/add_complain" target="_blank">投诉举报</a></dd>
-                    <dd><a rel="nofollow" href="https://www.antuan.com/about/attention?action=zhuyi" target="_blank">注意事项</a></dd>
-                    <dd><a rel="nofollow" href="https://www.antuan.com/about/attention?action=service" target="_blank">售后服务</a></dd>
+                    <dd><a rel="nofollow" href="https://www.hejiacom/user_home/add_complain" target="_blank">投诉举报</a></dd>
+                    <dd><a rel="nofollow" href="https://www.hejiacom/about/attention?action=zhuyi" target="_blank">注意事项</a></dd>
+                    <dd><a rel="nofollow" href="https://www.hejiacom/about/attention?action=service" target="_blank">售后服务</a></dd>
                 </dl>
                 <dl>
                     <dt>关注和家</dt>
@@ -2379,16 +2205,16 @@
                     <dd>
                         <a rel="nofollow" class="wechat" href="javascript:void(0)"><i class="weixin"></i>微信
                             <div class="wechat-bg">
-                                <img width="101" height="101" src="https://cdn.file0.antuan.com/2017/12/01/67bac359808c.png" alt="和家家博会" />
+                                <img width="101" height="101" src="" alt="和家家博会" />
                             </div>
                         </a>
                     </dd>
                 </dl>
                 <dl>
                     <dt>关于我们</dt>
-                    <dd><a href="https://www.antuan.com/about/attention?action=cooperation" target="_blank">合作及洽谈</a></dd>
-                    <dd><a href="https://www.antuan.com/about/attention?action=recruit" target="_blank">招聘英才</a></dd>
-                    <dd><a href="https://www.antuan.com/about/attention?action=contact" target="_blank">关于我们</a></dd>
+                    <dd><a href="https://www.hejiacom/about/attention?action=cooperation" target="_blank">合作及洽谈</a></dd>
+                    <dd><a href="https://www.hejiacom/about/attention?action=recruit" target="_blank">招聘英才</a></dd>
+                    <dd><a href="https://www.hejiacom/about/attention?action=contact" target="_blank">关于我们</a></dd>
                 </dl>
                 <dl class="last">
                     <dt>合作媒体</dt>
@@ -2402,14 +2228,14 @@
         </div>
         <!--<div class="info">
         <div class="l authentication"></div>
-        <a class="aqrz" rel="nofollow" href="https://v.pinpaibao.com.cn/authenticate/cert/?site=www.antuan.com&at=realname" target="_blank" >
+        <a class="aqrz" rel="nofollow" href="https://v.pinpaibao.com.cn/authenticate/cert/?site=www.hejiacom&at=realname" target="_blank" >
         <i></i>
          <img src="/static/images/20160521/homepage/anquan.png" width="83" height="30" />
         </a>
         <div class="l copy-right">Copyright ©2005 - 2017 antuan.com All Rights Reserved.    安徽美达会展有限公司版权所有  皖ICP备11011264号-3</div>
         </div>-->
         <div class="at_copyright">
-            <p> 皖ICP备11011264号-3 | 违法和不良信息举报电话：4000505580<br/>Copyright ©2005 - 2017 Antuan.com 版权所有 | 消费者维权热线：4000505580  经营证照<br/>和家旗下网站：和家家博会 | 和家婚博会 | 推广合作：81137152(QQ)<br/>安徽美达会展有限公司<br/>隐私政策：我们非常重视您的隐私，所收集的隐私数据严格保密不会做为它用</p>
+            <p> 皖ICP备11011264号-3 | 违法和不良信息举报电话：4000505580<br/>Copyright ©2005 - 2017 hejia.com 版权所有 | 消费者维权热线：4000505580  经营证照<br/>和家旗下网站：和家家博会 | 和家婚博会 | 推广合作：81137152(QQ)<br/>安徽美达会展有限公司<br/>隐私政策：我们非常重视您的隐私，所收集的隐私数据严格保密不会做为它用</p>
             <i class="at_license"></i>
         </div>
         <input type="hidden" name="city_name" value="" id="city_name" />
@@ -2418,7 +2244,7 @@
 <div class="bottom-sign">
     <div id="mark"></div>
     <div class="clearfix fix-wrap">
-        <img src="https://cdn.file0.antuan.com/2017/12/01/55fce4b11115.png" width="100%" class="bottombg"/>
+        <img src="" width="100%" class="bottombg"/>
         <div class="form bm-form" name="bmForm" id="bmForm">
             <input name="newid" id="newid" type="hidden" value="" autofocus="autofocus"/>
             <input name="hmac" id="hmac" type="hidden" value="" />
@@ -2445,83 +2271,6 @@
     </div>
 </div>
 <script src="<?=base_url('result/static/js/app/new_common.js')?>" type="text/javascript"></script>
-<script src="https://cdn.file3.goodid.com/ID/static/antuan.new/lib/layer/layerv2.4.js" type="text/javascript"></script>
-<script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
-
-<!--站长统计-->
-<div style="display:none;"><script src="https://s19.cnzz.com/z_stat.php?id=1263367051&web_id=1263367051" language="JavaScript"></script></div>
-<!--登录弹窗-->
-<script id="user_login_tmpl" type="text/html">
-    <div class="clearfix user_login">
-        <div class="l login_box">
-            <ul class="clearfix login_navs">
-                <li class="active">
-                    <span>手机登录</span>
-                </li>
-                <li>
-                    <span>帐号登录</span>
-                </li>
-            </ul>
-            <div class="cut_div login_phone active">
-                <div class="input_wrap input_phone">
-                    <input type="phone" class="phone_number" placeholder="手机号" oninput="if(value.length>11)value=value.slice(0,11)" />
-                </div>
-                <div class="clearfix input_wrap">
-                    <input style="width:194px;" class="l code" id="pic_code" type="text" placeholder="请输入图形验证码" />
-                    <img class="l" id="imgcode" src="/service/open/code?name=register&amp;srand=1462010732" onclick="javascript:$(this).attr('src', '/service/open/code?name=register&amp;srand=' + Math.random()); $('#pic_code').attr('disabled',false);" title="看不清？点击图片刷新 (不区分大小写)" style="width:162px;height:60px;margin-left:14px;" />
-                    <a style="float:right;font-size:16px;line-height:20px;width:9%;color:#18b4ed;margin-top:20px;" class="js_rush_code" href="javascript:;">点击刷新</a>
-                </div>
-                <div class="clearfix input_wrap">
-                    <input style="width:194px;" type="phone" class="l code_number" placeholder="短信验证码" oninput="if(value.length>4)value=value.slice(0,4)" />
-                    <button style="width:194px;" class="l js_getCode get_code">获取验证码</button>
-                </div>
-                <div class="clearfix for_help">
-                    <label>
-                        <input type="checkbox" class="l input_checkbox" checked="checked" id="" name="" value="" />
-                        <span class="l">记住我</span>
-                    </label>
-                    <!--<a class="r">忘记密码</a>-->
-                </div>
-                <div class="js_login_in login_in">
-                    <button>立即登录</button>
-                </div>
-                <div class="now_zc">
-                    <p>还没有帐户？ <a href="/loginv2/register" class="ja_zhuce zhuce">马上注册！</a></p>
-                </div>
-            </div>
-            <div class="hidden cut_div login_account">
-                <div class="input_wrap">
-                    <input type="phone" class="account_number" placeholder="手机号" oninput="if(value.length>11)value=value.slice(0,11)" />
-                </div>
-                <div class="input_wrap">
-                    <input type="password" class="account_psd" placeholder="密码" oninput="if(value.length>50)value=value.slice(0,50)" />
-                </div>
-                <div class="clearfix for_help">
-                    <label>
-                        <input type="checkbox" class="l input_checkbox" checked="checked" id="" name="" value="" />
-                        <span class="l">记住我</span>
-                    </label>
-                    <!--<a class="r">忘记密码</a>-->
-                </div>
-                <div class="js_loginIn login_in">
-                    <button>立即登录</button>
-                </div>
-                <div class="now_zc">
-                    <p>还没有帐户？ <a href="/loginv2/register" class="ja_zhuce zhuce">马上注册！</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="l third_box">
-            <p class="wechat">微信扫一扫，快速登录</p>
-            <div class="third_login">
-                <div id ="login_container"></div>
-                <p class="text">使用合作帐户登录</p>
-                <div class="qq_wb">
-                    <a class="qq" title="qq登录" href="https://www.antuan.com/oauth/qq_login"></a>
-                    <a class="wb" title="微博登录" href="https://www.antuan.com/oauth/weibo_login"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</script></body>
+<!--<script src="https://cdn.file3.goodid.com/ID/static/antuan.new/lib/layer/layerv2.4.js" type="text/javascript"></script>-->
+</body>
 </html>

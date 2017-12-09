@@ -73,10 +73,10 @@
                     id:"login_container",
                     appid: "wx52849f7e1dda0ffa",
                     scope: "snsapi_login",
-                    redirect_uri: "http://www.antuan.com/callback/index?type=1",
+                    redirect_uri: "http://www.hejiacom/callback/index?type=1",
                     state: "123",
                     style: "white",
-                    href: "https://www.antuan.com/static/css/user_home/wx_chat_bd.css"
+                    href: "https://www.hejiacom/static/css/user_home/wx_chat_bd.css"
                 });
             });
 

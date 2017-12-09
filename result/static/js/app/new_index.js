@@ -226,6 +226,9 @@
                 $data = {"act_id":actid,"cat_id":id,"current":0,"rowCount":10};
                 Model.getProductByClassify($data);
             });
+            $(document).on("click","#dialog .orderbtn button",function(){
+               alert('aa');
+            });
 
 
             // 表单验证码

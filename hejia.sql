@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100108
 File Encoding         : 65001
 
-Date: 2017-12-08 08:09:07
+Date: 2017-12-09 03:57:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -89,11 +89,14 @@ CREATE TABLE `hj_subscribe_user` (
   `createDate` datetime DEFAULT NULL,
   `status` tinyint(2) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hj_subscribe_user
 -- ----------------------------
+INSERT INTO `hj_subscribe_user` VALUES ('12', '李先生', '15896327458', '2017-12-09 03:45:15', '1');
+INSERT INTO `hj_subscribe_user` VALUES ('13', '王先生', '15994077575', '2017-12-09 03:46:31', '1');
+INSERT INTO `hj_subscribe_user` VALUES ('14', '赵小姐', '13837425698', '2017-12-09 03:47:57', '1');
 
 -- ----------------------------
 -- Table structure for hj_sys_module
@@ -145,4 +148,4 @@ CREATE TABLE `hj_sys_user` (
 -- ----------------------------
 -- Records of hj_sys_user
 -- ----------------------------
-INSERT INTO `hj_sys_user` VALUES ('1', '超级管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '', null, null, null, '2017-12-07 20:30:11', '1', '0', '0', null);
+INSERT INTO `hj_sys_user` VALUES ('1', '超级管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '', null, null, null, '2017-12-09 02:43:03', '1', '0', '0', null);

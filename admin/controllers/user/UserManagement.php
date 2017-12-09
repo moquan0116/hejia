@@ -55,4 +55,30 @@ class UserManagement extends MY_Controller {
             )
         );
     }
+
+    public function add() {
+
+        $this->load->view('subUser/subUserAdd.html');
+    }
+
+    public function doAdd(){
+
+        $data = array(
+            'name' => $this->input->post('name'),
+            'phone' => $this->input->post('phone'),
+            'createDate' => date( 'Y-m-d H:i:s',time())
+        );
+        $user = $this->db->get_where('subscribe_user',array('phone'=>$data['phone']))->row();
+        if($user){
+            $this->error( "手机号已存在");
+        }else{
+            $this->db->insert( 'subscribe_user', $data );
+            if( $this->db->affected_rows() <= -1){
+                $this->error( "操作失败" );
+            }else{
+                $this->success( "操作成功" ,creat_url('user/UserManagement/index'));
+            }
+        }
+
+    }
 }

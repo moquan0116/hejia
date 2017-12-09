@@ -189,7 +189,7 @@
 
 .header_middle .header_safe{width:172px;height:30px;margin:8px 0 0 26px;background:url(../../static/images/20160521/header_safe.png) no-repeat;}
 /*.header_bottom{border-bottom:1px solid #df1a35;}*/
-.header_bottom_bor{position:relative;z-index:10;height:42px;line-height:42px;margin-top:40px;/*border-bottom:1px solid #bb0023;*/background:#0959adc7 url(../../static/images/index/lowline.png) 0 0 repeat;}
+.header_bottom_bor{position:relative;z-index:10;height:42px;line-height:42px;margin-top:40px;/*border-bottom:1px solid #bb0023;*/background:#5696da url(../../static/images/index/lowline.png) 0 0 repeat;}
 /*.header_bottom .menulist{font-family:'Microsoft Yahei';position:relative;width:1190px;height:100%;margin:0 auto;}*/
 .header_bottom .menulist{font-family:'Microsoft Yahei';position:relative;/*width:1200px;*/width:600px;height:100%;/*margin:0 auto;*/margin-left: 20rem;}
 .header_bottom .menulist{background:url(../../static/images/common/top_nav.png) 0 -2px no-repeat;}

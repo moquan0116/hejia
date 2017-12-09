@@ -821,10 +821,35 @@
             </div>
             <p class="subtitle">劲爆和家价 比比就知道，抢到就是赚到</p>
         </div>
-        <input type="hidden" name="special_limit" id="special_limit" value="8">
+        <input type="hidden" name="special_limit" id="special_limit" value="2">
         <div class="speciallist clearfix">
             <ul>
-                <li  data-original="3599.00" data-special="1099" data-name="TATA木门后时代镜风@001金楸色">
+                <?php foreach($goods as $key => $data):?>
+                <li  data-original="<?=$data['marketPrice']?>" data-special="<?=$data['hePrice']?>" data-name="<?=$data['goodsName']?>">
+                    <div class="special-unit">
+                        <div class="img-wrap at-special-img">
+                            <img class="lazy" src="<?=$data['image']?>" data-original="" width="100%" alt="和家家博会">
+                        </div>
+                        <div class="at-special-content">
+                            <h3 title="<?=$data['goodsName']?>"><?=$data['goodsName']?></h3>
+                            <p title="<?=$data['caption']?>" class="special_caption"><?=$data['caption']?></p>
+                            <div class="special-content_wrap">
+                                <span class="special-content_nums">已有6人预约</span>
+                                <div data-width="6" class="at-special-content_step progress">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix special-content_price">
+                                <p class="special_dmj">店面价：<?=$data['marketPrice']?></p>
+                                <p class="special_atj">和家价：<b><?=$data['hePrice']?></b> </p>
+                                <a class="special-order">立即预约</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <?php endforeach;?>
+
+               <!-- <li  data-original="3599.00" data-special="1099" data-name="TATA木门后时代镜风@001金楸色">
                     <div class="special-unit">
                         <div class="img-wrap at-special-img">
                             <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/09/30/26b6cdb0fd1d.jpg" width="100%" alt="和家家博会">
@@ -845,161 +870,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li  data-original="899.00" data-special="599" data-name="箭牌花洒 AMG12G816">
-                    <div class="special-unit">
-                        <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/09/30/01b9d2a0e2f7.jpg" width="100%" alt="和家家博会">
-                        </div>
-                        <div class="at-special-content">
-                            <h3 title="箭牌花洒 AMG12G816">箭牌花洒 AMG12G816</h3>
-                            <p title="顶喷可旋转  限量300套" class="special_caption">顶喷可旋转  限量300套</p>
-                            <div class="special-content_wrap">
-                                <span class="special-content_nums">已有6人预约</span>
-                                <div data-width="6" class="at-special-content_step progress">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix special-content_price">
-                                <p class="special_dmj">店面价：899.00元/套</p>
-                                <p class="special_atj">和家价：<b>599</b>元/套 </p>
-                                <a class="special-order">立即预约</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li  data-original="2692.00" data-special="499" data-name="东鹏洁具马桶1431">
-                    <div class="special-unit">
-                        <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/09/30/4278f5f465ab.jpg" width="100%" alt="和家家博会">
-                        </div>
-                        <div class="at-special-content">
-                            <h3 title="东鹏洁具马桶1431">东鹏洁具马桶1431</h3>
-                            <p title="限20套" class="special_caption">限20套</p>
-                            <div class="special-content_wrap">
-                                <span class="special-content_nums">已有6人预约</span>
-                                <div data-width="6" class="at-special-content_step progress">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix special-content_price">
-                                <p class="special_dmj">店面价：2692.00元/套</p>
-                                <p class="special_atj">和家价：<b>499</b>元/套 </p>
-                                <a class="special-order">立即预约</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li  data-original="299.00" data-special="99" data-name="郁金香晾衣架">
-                    <div class="special-unit">
-                        <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/11/16/8cca761f3548.jpg" width="100%" alt="和家家博会">
-                        </div>
-                        <div class="at-special-content">
-                            <h3 title="郁金香晾衣架">郁金香晾衣架</h3>
-                            <p title="不包送货安装  限购前4套" class="special_caption">不包送货安装  限购前4套</p>
-                            <div class="special-content_wrap">
-                                <span class="special-content_nums">已有6人预约</span>
-                                <div data-width="6" class="at-special-content_step progress">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix special-content_price">
-                                <p class="special_dmj">店面价：299.00元/套</p>
-                                <p class="special_atj">和家价：<b>99</b>元/套 </p>
-                                <a class="special-order">立即预约</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li  data-original="15.80" data-special="4.98" data-name="金牌天纬陶瓷39005A劲爆单品抢购20平方">
-                    <div class="special-unit">
-                        <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/04/05/d29ab52807af.jpg" width="100%" alt="和家家博会">
-                        </div>
-                        <div class="at-special-content">
-                            <h3 title="金牌天纬陶瓷39005A劲爆单品抢购20平方">金牌天纬陶瓷39005A劲爆单品抢购20平方</h3>
-                            <p title="300*300墙砖  每户限20平" class="special_caption">300*300墙砖  每户限20平</p>
-                            <div class="special-content_wrap">
-                                <span class="special-content_nums">已有6人预约</span>
-                                <div data-width="6" class="at-special-content_step progress">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix special-content_price">
-                                <p class="special_dmj">店面价：15.80元/片</p>
-                                <p class="special_atj">和家价：<b>4.98</b>元/片 </p>
-                                <a class="special-order">立即预约</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li  data-original="1299.00" data-special="999" data-name="箭牌头牌马桶AB1116 限购300套  ">
-                    <div class="special-unit">
-                        <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/09/30/4bc608f45c00.jpg" width="100%" alt="和家家博会">
-                        </div>
-                        <div class="at-special-content">
-                            <h3 title="箭牌头牌马桶AB1116 限购300套  ">箭牌头牌马桶AB1116 限购300套  </h3>
-                            <p title="喷射虹吸式坐便器 节水静音 " class="special_caption">喷射虹吸式坐便器 节水静音 </p>
-                            <div class="special-content_wrap">
-                                <span class="special-content_nums">已有6人预约</span>
-                                <div data-width="6" class="at-special-content_step progress">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix special-content_price">
-                                <p class="special_dmj">店面价：1299.00元/套</p>
-                                <p class="special_atj">和家价：<b>999</b>元/套 </p>
-                                <a class="special-order">立即预约</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li  data-original="3280.00" data-special="1980" data-name="步阳精品福喜门BY-JP06">
-                    <div class="special-unit">
-                        <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/09/30/cbd02c4a4a21.jpg" width="100%" alt="和家家博会">
-                        </div>
-                        <div class="at-special-content">
-                            <h3 title="步阳精品福喜门BY-JP06">步阳精品福喜门BY-JP06</h3>
-                            <p title="限量5樘，仅限供货" class="special_caption">限量5樘，仅限供货</p>
-                            <div class="special-content_wrap">
-                                <span class="special-content_nums">已有6人预约</span>
-                                <div data-width="6" class="at-special-content_step progress">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix special-content_price">
-                                <p class="special_dmj">店面价：3280.00</p>
-                                <p class="special_atj">和家价：<b>1980</b> </p>
-                                <a class="special-order">立即预约</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li  data-original="999.00" data-special="399" data-name="绿森林硅藻泥涂料">
-                    <div class="special-unit">
-                        <div class="img-wrap at-special-img">
-                            <img class="lazy" src="/static/images/common/grey.gif" data-original="https://cdn.file0.antuan.com/2017/09/30/1c295255f70b.jpg" width="100%" alt="和家家博会">
-                        </div>
-                        <div class="at-special-content">
-                            <h3 title="绿森林硅藻泥涂料">绿森林硅藻泥涂料</h3>
-                            <p title="不包工，自提" class="special_caption">不包工，自提</p>
-                            <div class="special-content_wrap">
-                                <span class="special-content_nums">已有6人预约</span>
-                                <div data-width="6" class="at-special-content_step progress">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix special-content_price">
-                                <p class="special_dmj">店面价：999.00元/桶</p>
-                                <p class="special_atj">和家价：<b>399</b>元/桶 </p>
-                                <a class="special-order">立即预约</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                </li>-->
             </ul>
         </div>
         <div class="loadmore loadspecial">
@@ -2574,6 +2445,7 @@
 <script src="<?=base_url('result/static/js/core/jquery.focus.min.js')?>"></script>
 <script src="<?=base_url('result/static/js/core/jquery.slide.min.js')?>"></script>
 <script src="<?=base_url('result/static/js/core/placeholder.min.js')?>"></script>
+<script src="<?=base_url('result/static/js/myTemplate.js')?>"></script>
 <script src="<?=base_url('result/static/lib/template.js')?>"></script>
 <!-- <script src="/static/js/app/20160521/index.js"></script> -->
 <script src="<?=base_url('result/static/js/app//new_index.js')?>"></script>

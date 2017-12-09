@@ -73,6 +73,35 @@
                 $(this).remove();
             })
         },
+        moreAjaxSpecialMy:function( $data, $obj ){
+            //$(".speciallist>ul").append(myTemplate);
+            App.ajax('my_host/hejia', 'index.php/main/getAddGoods', $data, 'GET', function(r){
+                if(r.code == 200){
+                    $(r.data).each(function (k,v) {
+                        var tmpl = $(myTemplate).clone();
+
+                        $(tmpl).find('img').attr("src",v.image);
+                        $(tmpl).find('li').data("original",v.marketPrice);
+                        $(tmpl).find('li').data("special",v.hePrice);
+                        $(tmpl).find('li').data("name",v.goodsName);
+                        $(tmpl).find('h3').attr("title",v.goodsName);
+                        $(tmpl).find('h3').text(v.goodsName);
+                        $(tmpl).find('h3').next('p').attr('title',v.caption);
+                        $(tmpl).find('h3').next('p').text(v.caption);
+                        $(tmpl).find('.special_dmj').html('店面价：'+v.marketPrice);
+                        $(tmpl).find('.special_atj').html('和家价：<b>'+v.hePrice+'</b>');
+
+                        $(".speciallist>ul").append(tmpl)
+                    });
+                }else{
+                    $($obj).remove();
+                }
+
+
+            },function(r){
+                App.system(r.msg, 2);
+            })
+        },
         getBrandByClassify:function($data){
             App.ajax('My_host/hejia', 'index.php/main/getBrand', $data, 'GET', function(r){
                 console.log(r);
@@ -233,7 +262,31 @@
                 Model.getProductByClassify($data);
             });
             $(document).on("click","#dialog .orderbtn button",function(){
-               alert('aa');
+                var form = $(this).parents('.form');
+                var data = {
+                   'name':$(form).find("input[name='name']").val(),
+                   'phone':$(form).find("input[name='phone']").val()
+               };
+                var patrn = /^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                var regName = /^[_\-\~\!\@\#\$\%\^\&\*\(\)\|\,\，\?\？\>\<\.\/\}\{\;\；\'\》\《\。]+$/;//过滤英文字母
+
+                if(data.name.length < 2){
+                    App.system('您输入的联系人姓名无效！',1);
+                    $(form).find(":input[name='name']").select();
+                    return false;
+                }else{
+                    if(true==regName.test(data.name)){
+                        App.system('您输入的联系人姓名无效！',1);
+                        $(form).find(":input[name='name']").select();
+                        return false;
+                    }
+                }
+                if(! patrn.test(data.phone)){
+                    App.system('手机号不正确！',1);
+                    $(form).find(":input[name='phone']").select();
+                    return false;
+                }
+                Model.submitAjaxForm(data, '');
             });
 
 
@@ -366,7 +419,7 @@
 
             // 特价加载更多
             $(document).on('click', '.at-special .loadspecial', function() {
-                var $this = $(this);
+                /*var $this = $(this);
                 var $obj = $('.at-special .loadmore');
                 var html =  $obj.html();
                 $obj.html('<i class="loading"></i><span>正在加载中</span>');
@@ -389,8 +442,18 @@
                     "cat_id" : cat_id,
                     "current":current,
                     "rowCount":rowCount
+                };*/
+                var $obj = $('.at-special .loadmore');
+                var page = $('#special_pages').val();
+                var rowCount = $("#special_limit").val() ;
+                var current = rowCount * parseInt(page);
+                $('#special_pages').val(parseInt(page)+1);
+                var $data = {
+                    "current":current,
+                    "rowCount":rowCount
                 };
-                Model.moreAjaxSpecial(data,$obj,html);
+                //console.log($data);
+                Model.moreAjaxSpecialMy( $data, this );
             });
 
             //头部短信弹窗

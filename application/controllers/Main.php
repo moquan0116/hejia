@@ -17,11 +17,13 @@ class Main extends MY_Controller {
         $userCount = $this->db->select("count(id) as num")->from("subscribe_user")->where("to_days(createDate) = to_days(now())")->get()->result();
         $residue= $this->test( $this->maxNum - $userCount[0]->num );
         $class = $this->db->get("class")->result();
+        $goods = $this->db->limit(2,0)->get("goods")->result_array();
         $this->load->view('main/index.html',
             array(
                 'user'=>$user,
                 'class' => $class,
-                'residue'=>$residue
+                'residue'=>$residue,
+                'goods'=>$goods
             )
         );
     }
@@ -70,5 +72,17 @@ class Main extends MY_Controller {
         $code = $this->input->get('code');
         $brand = $this->db->get_where( 'brand',array( 'classCode' => $code) )->result();
         echo json_encode($brand);
+    }
+
+    public function getAddGoods() {
+        $current = $this->input->get('current');
+        $rowCount = $this->input->get('rowCount');
+        $goods = $this->db->select()->from("goods")->limit($rowCount,$current)->get()->result();
+        if(empty($goods)){
+            echo json_encode( array("code"=>500,"data" =>null) );
+            return false;
+        }else{
+            echo json_encode( array("code"=>200,"data" =>$goods) );
+        }
     }
 }

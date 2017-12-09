@@ -135,7 +135,7 @@
                     <ul class="clearfix">
                         <li class="item clearfix ">
                             <div class="nav_bd shouye">
-                                <a class="nav_title" href="https://www.hejia.com/home/index" target="_blank">
+                                <a class="nav_title" href="http://www.52hejia.com/" target="_blank">
                                     首页
                                 </a>
                             </div>
@@ -1076,40 +1076,32 @@
                 <p class="subtitle">锦绣大道和庐州大道交口滨湖国际会展中心</p>
             </div>
             <div class="at-map-wrap">
-                <div data-pointx="117.304597" data-pointy="31.759635" id="at-map"></div>
-                <div class="at-map-btn">
+                <div data-pointx="87.627541" data-pointy="43.884108" data-mak="<?=base_url('result/static/images/my/zuobiao.png')?>" id="at-map"></div>
+                <!--<div class="at-map-btn">
                     <a href="https://j.map.baidu.com/HbGF5" target="_blank" rel="nofollow">导航</a>
-                </div>
+                </div>-->
             </div>
             <div class="trafficlist">
                 <div class="clearfix traffic-head">
-                    <div class="r traffic-tophone">
+                    <!--<div class="r traffic-tophone">
                         <a href="javascript:;">一键发送到手机</a>
-                    </div>
+                    </div>-->
                     <div class="traffic-tab">
                         <a class="active" href="javascript:;">公交</a>
-                        <a href="javascript:;">驾车</a>
-                        <a href="javascript:;">大巴车</a>
-                        <a href="javascript:;">地铁</a>
+                        <!--<a href="javascript:;">驾车</a>-->
+                        <!--<a href="javascript:;">大巴车</a>
+                        <a href="javascript:;">地铁</a>-->
                     </div>
                 </div>
                 <div class="traffic-content">
                     <div class="lx traffic-contentlist">
                         <dl>
-                            <dt>滨湖会展中心-西：</dt>
-                            <dd>60、62路</dd>
-                        </dl>
-                        <dl>
-                            <dt>四十八中南校区：</dt>
-                            <dd>61路</dd>
-                        </dl>
-                        <dl>
-                            <dt>滨湖会展中心：</dt>
-                            <dd>26、61、62、522路</dd>
+                            <dt>新疆国际会展中心：</dt>
+                            <dd>1、78路、532路 红光山会展中心下车</dd>
                         </dl>
                         <p class="at-map-tips">为谨防公交路线临时有所变动，出行前请查询最新公交路线</p>
                     </div>
-                    <div class="hidden traffic-contentlist">
+                    <!--<div class="hidden traffic-contentlist">
                         <dl>
                             <dt>自驾路线：</dt>
                             <dd>合肥市滨湖新区，锦绣大道与庐州大道交叉口;</dd>
@@ -1159,7 +1151,7 @@
                             <dd>地铁1号线途经站点（共23站，您可到以下站点转乘1号地铁到达会展中心）</dd>
                             <dd>合肥火车站 、长淮 、明光路 、大东门 、包公园、 合工大南区 、朱岗 、秋浦河路 、葛大店 、望湖城、合肥南站 、南站南广场 、骆岗 、高王 、<strong>滨湖会展中心</strong>、 紫庐、 塘西河公园 、金斗公园 、云谷路 、万达城 、万年埠、 丙子铺、 九联圩</dd>
                         </dl>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>    </div>
@@ -1859,135 +1851,7 @@
 </script>
 
 
-<!-- 爆款特价模板 -->
-<script id="special_tmpl" type="text/x-jquery-tmpl">
-<div class="extradialog specialdialog">
-<div class="title"><p>${name}</p></div>
-<div class="extra_wrap">
-<div class="left_wrap">
-<div class="detail">
-<img src="${src}" width="194" height="194"/>
-</div>
-<p class="grey">和家价商品抢购仅限团购会现场</p>
-</div>
-<div class="right_wrap">
-<div class="form">
-<input name="newid" id="newid" type="hidden" value="" />
-<input name="hmac" id="hmac" type="hidden" value="" />
-<input name="remark" id="remark" type="hidden" value="预约${name}">
-<input name="deposit" id="deposit" type="hidden" value="" />
-<input name="activity" id="activity" type="hidden" value="" />
-<input type="hidden" name="radio_type" value="1" />
-<input type="hidden" name="piaonumg" value="1" />
-<div class="unitprice clearfix"><p class="original">店面价：￥${original}</p><p class="special"><em>和家价：￥</em><span>${special}</span></p></div>
-<div class="forminput">
-<input type="text" name="name" value="" placeholder="请输入您的姓名" autocomplete="off" />
-<div class="hidden name-message">
-<ul>
-<li>先生</li>
-<li>女士</li>
-</ul>
-</div>
-</div>
-<div class="forminput">
-<input type="text" name="phone" value="" placeholder="请输入您的手机号"/>
-</div>
-<!--   -->
-<div class="orderbtn">
-<button action="submit" type="submit" value="">立即预约</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</script>
 
-<!-- 更多爆款 -->
-<script id="more_special_tmpl" type="text/x-jquery-tmpl">
-{{each(i,v)  info}}
-<li data-original="${v['oriPrice']}" data-special="${v['price']}" data-name="${v['title']}">
-    <div class="special-unit">
-        <div class="img-wrap at-special-img">
-            <img  src="${v['img']}" width="100%" alt="和家家博会">
-        </div>
-        <div class="at-special-content">
-            <h3 title="${v['title']}">${v['title']}</h3>
-            <p title="${v['remark']}" class="special_caption">${v['remark']}</p>
-            <div class="special-content_wrap">
-                <span class="special-content_nums">已有${v['show_appt']}人预约 </span>
-                <div data-width="${v['bfb']}" class="at-special-content_step progress">
-                    <div class="progress-bar"></div>
-                </div>
-            </div>
-            <div class="clearfix special-content_price">
-                <p class="special_dmj">店面价：${v['oriPrice']}${v['unit']} </p>
-                <p class="special_atj">和家价：<b>${v['price']}</b>${v['unit']} </p>
-                <a class="special-order">立即预约</a>
-            </div>
-        </div>
-    </div>
-</li>
-{{/each}}
-</script>
-
-<!-- 根据分类获取品牌 -->
-<script id="brandlist_tmpl" type="text/x-jquery-tmpl">
-<ul>
-   {{each(i,v) list}}
-    <li data-name="${v['brandName']}"  {{if i!= 0 && i/5 == 0 }} class="mrnone" {{/if}} data-desc="${v['antuanRelation']}">
-        <a class="order_btn"><img src="${v['s_log']}"/></a>
-    </li>
-    {{/each}}
-</ul>
-</script>
-
-<!-- 根据分类获取爆款商品 -->
-<script id="productlist_tmpl" type="text/x-jquery-tmpl">
-<ul>
-{{each(i,v)  info}}
-<li data-original="${v['oriPrice']}" data-special="${v['price']}" data-name="${v['title']}">
-    <div class="special-unit">
-        <div class="img-wrap at-special-img">
-            <img  src="${v['img']}" width="100%" alt="和家家博会">
-        </div>
-        <div class="at-special-content">
-            <h3>${v['title']}</h3>
-            <p class="special_caption">${v['remark']}</p>
-            <div class="special-content_wrap">
-                <span class="special-content_nums">已有${v['show_appt']}人预约 </span>
-                <div data-width="${v['bfb']}" class="at-special-content_step progress">
-                    <div class="progress-bar"></div>
-                </div>
-            </div>
-            <div class="clearfix special-content_price">
-                <p class="special_dmj">店面价：${v['oriPrice']}${v['unit']} </p>
-                <p class="special_atj">和家价：<b>${v['price']}</b>${v['unit']} </p>
-                <a class="special-order">立即预约</a>
-            </div>
-        </div>
-    </div>
-</li>
-{{/each}}
-</ul>
-</script>
-
-<!--头部手机模版-->
-<script id="message_tmpl" type="text/x-jquery-tmpl">
-<div class="message-wrap">
-<p>3月16日&nbsp;&nbsp;家装&nbsp;建材&nbsp;家具&nbsp;家电&nbsp;婚庆万人团购预订会</p>
-<div class="int-wrap">
-<input id="glPhone" type="tel" name="" value="" placeholder="填写您的手机号" oninput="if(value.length>11)value=value.slice(0,11)" />
-<button id="glan">发送至手机</button>
-</div>
-</div>
-</script>
-
-<script id="map_tmpl" type="text/x-jquery-tmpl">
-<div class="map-wrap">
-<img class="lazy" src="" />
-<a class="close-map"></a>
-</div>
-</script>
 
 <script id="form_tmpl" type="text/x-jquery-tmpl">
 <div class="from-wrap">
@@ -2183,10 +2047,10 @@
             <div class="l guide">
                 <dl class="lead">
                     <dt>购物指南</dt>
-                    <dd><a rel="nofollow" href="/#bm">报名热线</a></dd>
-                    <dd><a rel="nofollow" href="/#floor6">优惠力度</a></dd>
-                    <dd><a rel="nofollow" href="/#floor2">品牌优惠</a></dd>
-                    <dd><a rel="0" action="receive" href="javascript:void(0)">VIP票服务</a></dd>
+                    <dd><a rel="nofollow" href="#">报名热线</a></dd>
+                    <dd><a rel="nofollow" href="#">优惠力度</a></dd>
+                    <dd><a rel="nofollow" href="#">品牌优惠</a></dd>
+                    <dd><a rel="0" action="receive" href="#">VIP票服务</a></dd>
                     <!-- <dd><a rel="nofollow" href="https://www.hejiacom/#floor8" target="_blank">VIP票服务</a></dd>    -->
                     <!-- <dd><a rel="0" href="https://www.hejiacom/#bm" target="_blank">报名热线</a></dd>
                     <dd><a rel="6" href="https://www.hejiacom/#floor6" target="_blank">优惠力度</a></dd>
@@ -2195,13 +2059,13 @@
                 </dl>
                 <dl>
                     <dt>服务保障</dt>
-                    <dd><a rel="nofollow" href="https://www.hejiacom/user_home/add_complain" target="_blank">投诉举报</a></dd>
-                    <dd><a rel="nofollow" href="https://www.hejiacom/about/attention?action=zhuyi" target="_blank">注意事项</a></dd>
-                    <dd><a rel="nofollow" href="https://www.hejiacom/about/attention?action=service" target="_blank">售后服务</a></dd>
+                    <dd><a rel="nofollow" href="#" target="_blank">投诉举报</a></dd>
+                    <dd><a rel="nofollow" href="#" target="_blank">注意事项</a></dd>
+                    <dd><a rel="nofollow" href="#" target="_blank">售后服务</a></dd>
                 </dl>
                 <dl>
                     <dt>关注和家</dt>
-                    <dd><a rel="nofollow" href="http://weibo.com/0551antuan365" target="_blank"><i class="weibo"></i>新浪微博</a></dd>
+                    <dd><a rel="nofollow" href="#" target="_blank"><i class="weibo"></i>新浪微博</a></dd>
                     <dd>
                         <a rel="nofollow" class="wechat" href="javascript:void(0)"><i class="weixin"></i>微信
                             <div class="wechat-bg">
@@ -2212,9 +2076,9 @@
                 </dl>
                 <dl>
                     <dt>关于我们</dt>
-                    <dd><a href="https://www.hejiacom/about/attention?action=cooperation" target="_blank">合作及洽谈</a></dd>
-                    <dd><a href="https://www.hejiacom/about/attention?action=recruit" target="_blank">招聘英才</a></dd>
-                    <dd><a href="https://www.hejiacom/about/attention?action=contact" target="_blank">关于我们</a></dd>
+                    <dd><a href="http://www.52hejia.com/gywm/tdfc.htm" target="_blank">团队风采 </a></dd>
+                    <dd><a href="http://www.52hejia.com/gywm/qywh.htm" target="_blank">企业文化 </a></dd>
+                    <dd><a href="http://www.52hejia.com/gywm/lxwm.htm" target="_blank">关于我们</a></dd>
                 </dl>
                 <dl class="last">
                     <dt>合作媒体</dt>
@@ -2234,11 +2098,11 @@
         </a>
         <div class="l copy-right">Copyright ©2005 - 2017 antuan.com All Rights Reserved.    安徽美达会展有限公司版权所有  皖ICP备11011264号-3</div>
         </div>-->
-        <div class="at_copyright">
+        <!--<div class="at_copyright">
             <p> 皖ICP备11011264号-3 | 违法和不良信息举报电话：4000505580<br/>Copyright ©2005 - 2017 hejia.com 版权所有 | 消费者维权热线：4000505580  经营证照<br/>和家旗下网站：和家家博会 | 和家婚博会 | 推广合作：81137152(QQ)<br/>安徽美达会展有限公司<br/>隐私政策：我们非常重视您的隐私，所收集的隐私数据严格保密不会做为它用</p>
             <i class="at_license"></i>
         </div>
-        <input type="hidden" name="city_name" value="" id="city_name" />
+        <input type="hidden" name="city_name" value="" id="city_name" />-->
     </div>
 </div>
 <div class="bottom-sign">

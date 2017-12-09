@@ -1072,6 +1072,7 @@
         loadMap: function() {
             var CITY_POINTX = +$('#at-map').data('pointx');
             var CITY_POINTY = +$('#at-map').data('pointy');
+            var mak = +$('#at-map').data('mak');
             //百度地图API功能
             function loadJScript() {
                 var script = document.createElement("script");
@@ -1083,7 +1084,7 @@
             window.initMap = function() {
                 var map = new BMap.Map("at-map", {minZoom:6,maxZoom:15}); // 创建Map实例
                 var point = new BMap.Point(CITY_POINTX,CITY_POINTY); // 创建点坐标
-                var ICON = new BMap.Icon('/static/module/m/index/images/point_red.png', new BMap.Size(39, 25));
+                var ICON = new BMap.Icon(mak, new BMap.Size(39, 25));
                 map.panTo(point); // 设置地点居中
                 map.centerAndZoom(point,15); // 设初始化地图
                 var marker = new BMap.Marker(point, {icon: ICON});

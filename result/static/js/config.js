@@ -11,5 +11,5 @@ var goods = {
 };
 var brand = {
     'project':'hejia/index.php',
-    'method':'main/getAddGoods'
+    'method':'main/getBrand'
 };

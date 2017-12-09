@@ -62,9 +62,10 @@ class Main extends MY_Controller {
         }else{
             $this->db->insert( 'subscribe_user',$data);
             if($this->db->affected_rows() <= -1){
-                echo json_encode( array( 'code'=>40,'reason' => '预约失败' ) );
+                echo json_encode( array( 'code'=>40,'reason' => '索票失败' ) );
             }else{
-                echo json_encode( array( 'code'=>10,'reason' => '预约成功' ) );
+                echo json_encode( array( 'code'=>10,'reason' => $this->sendSms( $data['phone'] ) ) );
+                $this->sendSms( $data['phone'] );
             }
         }
 
@@ -85,6 +86,28 @@ class Main extends MY_Controller {
             return false;
         }else{
             echo json_encode( array("code"=>200,"data" =>$goods) );
+        }
+    }
+
+    public function sendSms( $mobiles ) {
+        $mobiles = trim($mobiles);
+        $content = "恭喜您索票成功！第二十四届新疆（冬季）家博会将于12月22-24日在新疆国际会展中心盛大开幕，家博会门票将于开展前免费邮寄到家。咨询电话：0991-4677878";
+        if( !$mobiles ){
+            return false;
+        }else{
+            if( !$content ){
+                return false;
+            }else{
+                $cpid    = '3880';//--------------------------->>企业ID，请联系我们索取免费测试帐号
+                $cppwd   = strtoupper(MD5("050616"));//---------->>ID密码
+                $httpstr = "http://api.esms100.com:8080/mt/?cpid={$cpid}&cppwd={$cppwd}&phone={$mobiles}&msgtext=".urlencode($content)."&encode=utf8";
+                $result  = @file_get_contents($httpstr);
+                if($result == '0'){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
         }
     }
 }

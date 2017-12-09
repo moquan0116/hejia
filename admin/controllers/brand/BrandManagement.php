@@ -30,7 +30,7 @@ class BrandManagement extends MY_Controller {
         //取会员信息
         $this->db->select("br.*,cls.classCode,cls.className")
                 ->from("brand br")
-                ->join("class cls","br.classCode = cls.classCode")
+                ->join("class cls","br.classCode = cls.classCode","left")
                 ->order_by("br.id","DESC");
         $total_rows =$this->db->count_all_results("",false);
         $this->db->page($curPage, $this->pageRows);

@@ -104,7 +104,6 @@
         },
         getBrandByClassify:function($data){
             App.ajax('My_host/hejia', 'index.php/main/getBrand', $data, 'GET', function(r){
-                console.log(r);
                 /*if (r.data.brand_data.length == 0) {
                     $(".at-brandlist ul").html('<li class="brand_empty"></li>');
                     return false;
@@ -116,9 +115,11 @@
                     $(".at-brandlist ul").html('<li class="brand_empty"></li>');
                     return false;
                 }
-                //var brand_data = r.data.brand_data;
-                var htmlStr = $("#brandlist_tmpl").tmpl({list : r}).outerHTML();
-                $(".at-brandlist").html(htmlStr);
+                $(".at-brandlist ul").children('li').remove();
+                $(r).each(function (k,v) {
+                    var ht = "<li data-name='"+v.brandName+"' data-desc=''><a class='order_btn'><img src='"+v.image+"'></a></li>";
+                    $(".at-brandlist ul").append( ht );
+                });
             },function(r){
                 App.system(r.msg, 2);
             })

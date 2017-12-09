@@ -86,17 +86,15 @@
                             <table class="table table-bordered text-center">
                                 <tr>
                                     <th>序号</th>
-                                    <th>分类名称</th>
-                                    <th>品牌编码</th>
                                     <th>品牌名称</th>
+                                    <th>分类名称</th>
                                     <th>操作</th>
                                 </tr>
                                 <?php foreach($brand as $key=> $data):?>
                                 <tr>
                                     <td><?=($key+1)?></td>
-                                    <td><?=$data['className']?></td>
-                                    <td><?=$data['brandCode']?></td>
                                     <td><?=$data['brandName']?></td>
+                                    <td><?=$data['className']?></td>
                                     <td>
                                         <div class="btn-group cursor">
                                             <button class="btn btn-primary btn-sm editJ"  data-id="<?=$data['id']?>">

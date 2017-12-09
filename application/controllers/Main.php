@@ -17,13 +17,15 @@ class Main extends MY_Controller {
         $userCount = $this->db->select("count(id) as num")->from("subscribe_user")->where("to_days(createDate) = to_days(now())")->get()->result();
         $residue= $this->test( $this->maxNum - $userCount[0]->num );
         $class = $this->db->get("class")->result();
+        $brand = $this->db->get_where("brand",array('classCode'=>$class[0]->classCode))->result_array();
         $goods = $this->db->limit(2,0)->get("goods")->result_array();
         $this->load->view('main/index.html',
             array(
                 'user'=>$user,
                 'class' => $class,
                 'residue'=>$residue,
-                'goods'=>$goods
+                'goods'=>$goods,
+                'brand'=>$brand
             )
         );
     }
